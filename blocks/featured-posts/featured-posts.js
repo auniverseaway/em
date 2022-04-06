@@ -1,7 +1,7 @@
 export default async function init(el) {
     const resp = await fetch('/query-index.json');
     console.log(resp.status);
-    if (resp.status == 200) {
+    if (resp.ok) {
         const json = await resp.json();
         const list = document.createElement('ul');
         json.data.forEach(item => {
