@@ -22,7 +22,7 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
-      milo-content:
+      miloContent:
         select: head > meta[name="milo-content"]
         value: |
           attribute(el, 'content')
