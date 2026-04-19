@@ -292,7 +292,7 @@ export async function loadArea({ area } = { area: document }) {
   const isSession = sessionStorage.getItem('session');
   if (isDoc) {
     if (isSession) await decorateSession();
-    decorateDoc();
+    await decorateDoc();
   }
   decoratePictures(area);
   const { decorateArea } = getConfig();
