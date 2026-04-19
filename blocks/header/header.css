@@ -207,6 +207,11 @@ header {
         max-width: var(--grid-container-width);
         margin: 0 auto;
       }
+
+      > a {
+        display: flex;
+        align-items: center;
+      }
     }
 
     .main-nav-link {
@@ -307,12 +312,19 @@ header {
     }
 
     .main-nav-section {
+      .default-content,
+      nav {
+        height: 100%;
+      }
+
       .main-nav-list {
         display: flex;
         gap: var(--spacing-l);
+        height: 100%;
       }
 
       .main-nav-item {
+        display: flex;
         border-bottom: initial;
 
         > * {
@@ -325,6 +337,12 @@ header {
             border-bottom: initial;
           }
         }
+      }
+
+      .main-nav-link {
+        display: flex;
+        align-items: center;
+        line-height: initial;
       }
     }
 

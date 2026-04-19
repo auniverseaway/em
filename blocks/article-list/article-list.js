@@ -44,8 +44,8 @@ async function createCard(article) {
   picPara.append(pic);
 
   const date = document.createElement('p');
-  date.textContent = article.publicationDate
-    ? getExcelDate(article.publicationDate)
+  date.textContent = article.publishDate
+    ? getExcelDate(article.publishDate)
     : '\u00A0';
 
   const title = document.createElement('p');

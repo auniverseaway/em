@@ -29,7 +29,7 @@ function buildArticleHero() {
   const fgText = document.createElement('div');
   fgText.className = 'article-hero-foreground-text';
 
-  const dateMeta = getMetadata('publication-date');
+  const dateMeta = getMetadata('publish-date');
   const rawDate = new Date(dateMeta);
   const dateText = rawDate.toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' });
 

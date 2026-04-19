@@ -65,6 +65,14 @@ article {
   }
 }
 
+.article-content {
+  .article-body {
+    > :first-child > :first-child > :first-child {
+      margin-top: 0;
+    }
+  }
+}
+
 .strong-blur {
   overflow: hidden;
 
@@ -88,5 +96,13 @@ article {
         height: 420px;
       }
     }
+  }
+
+  .article-share {
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    top: var(--header-height);
+    align-self: start;
   }
 }

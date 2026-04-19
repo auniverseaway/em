@@ -1,9 +1,13 @@
-name = "ak-media"
+name = "em-website"
 main = "index.js"
 compatibility_date = "2025-02-14"
 keep_vars = true
 
-vars = { AEM_HOSTNAME = "main--ak-media--author-kit.aem.live" }
+vars = { AEM_HOSTNAME = "main--em--auniverseaway.aem.live" }
+
+[env.stage]
+vars = { ENVIRONMENT = "stage", AEM_HOSTNAME = "main--em--auniverseaway.aem.page" }
+
 
 [env.dev]
-vars = { ENVIRONMENT = "dev", AEM_HOSTNAME = "main--ak-media--author-kit.aem.page" }
+vars = { ENVIRONMENT = "dev", AEM_HOSTNAME = "main--em--auniverseaway.aem.page" }
