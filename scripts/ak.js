@@ -271,6 +271,11 @@ function decorateHeader() {
   if (breadcrumbs) header.append(breadcrumbs);
 }
 
+function decorateSession() {
+  sessionStorage.setItem('session', true);
+  document.body.classList.add('session');
+}
+
 async function decorateDoc() {
   decorateHeader();
   await loadTemplate();
@@ -284,17 +289,24 @@ async function decorateDoc() {
 
 export async function loadArea({ area } = { area: document }) {
   const isDoc = area === document;
+  const isSession = sessionStorage.getItem('session');
+  if (isDoc) {
+    if (isSession) await decorateSession();
+    decorateDoc();
+  }
   decoratePictures(area);
   const { decorateArea } = getConfig();
   if (decorateArea) decorateArea({ area });
   const sections = decorateSections(area, isDoc);
-  if (isDoc) await decorateDoc();
   for (const [idx, section] of sections.entries()) {
     loadIcons(section);
     await Promise.all(section.widgets.map((block) => loadBlock(block)));
     await Promise.all(section.blocks.map((block) => loadBlock(block)));
     delete section.dataset.status;
-    if (isDoc && idx === 0) import('./postlcp.js');
+    if (isDoc && idx === 0) {
+      decorateSession();
+      import('./postlcp.js').then((mod) => mod.default());
+    }
   }
   if (isDoc) import('./lazy.js');
 }
