@@ -290,14 +290,14 @@ async function decorateDoc() {
 export async function loadArea({ area } = { area: document }) {
   const isDoc = area === document;
   const isSession = sessionStorage.getItem('session');
-  if (isDoc) {
-    if (isSession) await decorateSession();
-    await decorateDoc();
-  }
   decoratePictures(area);
   const { decorateArea } = getConfig();
   if (decorateArea) decorateArea({ area });
   const sections = decorateSections(area, isDoc);
+  if (isDoc) {
+    if (isSession) decorateSession();
+    await decorateDoc();
+  }
   for (const [idx, section] of sections.entries()) {
     loadIcons(section);
     await Promise.all(section.widgets.map((block) => loadBlock(block)));
