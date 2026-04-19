@@ -1,7 +1,5 @@
 article {
   section.article-content {
-    display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
@@ -83,7 +81,7 @@ article {
 }
 
 @media (width >= 900px) {
-  .article-hero {
+  section.article-hero {
     padding: 0 0 64px 0;
 
     .article-hero-foreground {
@@ -96,6 +94,11 @@ article {
         height: 420px;
       }
     }
+  }
+
+  section.article-content {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
   }
 
   .article-share {
