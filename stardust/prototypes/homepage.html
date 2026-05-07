@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-28
+  variant_direction: single — editorial bones, modern skin, photography-led restraint
+  imagery_mode: placeholder
+  synthesized_inputs:
+    - article-card photos: gradient atmosphere placeholders, varied per pillar
+    - latest-feed copy: synthesized example pieces (3 Opinion · 2 Field notes · 1 Code patterns) — designer authors real titles per piece
+    - "Updated" date and piece count: example values
+  note: prototype iteration target. Self-contained — Adobe Fonts kit + Google Fonts JetBrains Mono + inline SVGs.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience Managed · Thoughts on content management.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/uez3qis.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    /* color */
+    --stone: #EEF0EC;
+    --loam: #E2E6DF;
+    --canopy: #008000;
+    --pine: #0A4F1C;
+    --trunk: #1A1A1A;
+    --line: rgba(26,26,26,0.14);
+    --ink-soft: rgba(26,26,26,0.72);
+    --ink-faint: rgba(26,26,26,0.48);
+
+    /* type families */
+    --font-display: 'ivyora-display', Georgia, 'Times New Roman', serif;
+    --font-body: 'ivyepic-variable', 'Manrope', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* type scale */
+    --type-display-xl: clamp(72px, 10vw, 144px);
+    --type-display: clamp(48px, 6vw, 88px);
+    --type-h1: clamp(36px, 4.5vw, 64px);
+    --type-h2: 44px;
+    --type-h3: 28px;
+    --type-h4: 22px;
+    --type-body-lg: 20px;
+    --type-body: 18px;
+    --type-small: 14px;
+    --type-eyebrow: 11px;
+
+    /* spacing */
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 16px;
+    --space-l: 24px;
+    --space-xl: 40px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+    --space-4xl: 128px;
+
+    /* layout */
+    --max-width: 1280px;
+    --reading-width: 62ch;
+    --page-padding: 40px;
+    --navbar-height: 72px;
+    --radius-default: 4px;
+    --radius-disc: 50%;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--stone);
+    color: var(--trunk);
+    font-family: var(--font-body);
+    font-size: var(--type-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+
+  /* ============================================================
+     CHROME · sticky nav + footer
+     ============================================================ */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(238,240,236,0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 var(--page-padding);
+  }
+  header.site-nav .nav-inner {
+    max-width: var(--max-width); margin: 0 auto;
+    padding: 18px 0;
+    display: flex; align-items: center; gap: 28px;
+    height: var(--navbar-height);
+  }
+  .wordmark-link {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--trunk);
+    text-decoration: none;
+    letter-spacing: -0.015em;
+    line-height: 1;
+    margin-right: auto;
+  }
+  .wordmark-link .disc {
+    display: inline-block;
+    width: 0.18em; height: 0.18em;
+    border-radius: 50%;
+    background: var(--canopy);
+    vertical-align: 6%;
+    margin-left: 0.08em;
+  }
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pine);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+    transition: color 220ms ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute; left: 0; right: 100%; bottom: 2px;
+    height: 1px; background: var(--canopy);
+    transition: right 280ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .nav-link:hover { color: var(--canopy); }
+  .nav-link:hover::after { right: 0; }
+  .nav-link.active { color: var(--canopy); }
+  .nav-link.active::after { right: 0; }
+  .social-lockup {
+    display: flex; gap: 14px; margin-left: 8px;
+    padding-left: 24px;
+    border-left: 1px solid var(--line);
+    align-items: center;
+    height: 28px;
+  }
+  .social-lockup a {
+    color: var(--pine);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px;
+    transition: color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .social-lockup a:hover { color: var(--canopy); transform: translateY(-1px); }
+  .social-lockup svg { width: 100%; height: 100%; fill: currentColor; }
+
+  /* footer */
+  footer.site-footer {
+    background: var(--trunk);
+    color: var(--stone);
+    padding: var(--space-3xl) var(--page-padding) var(--space-xl);
+    margin-top: var(--space-4xl);
+  }
+  footer.site-footer .inner {
+    max-width: var(--max-width); margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl);
+  }
+  footer.site-footer .end {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 56px; line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-l);
+    color: var(--stone);
+  }
+  footer.site-footer .end .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 8%; margin-left: 0.06em;
+  }
+  footer.site-footer .deck {
+    font-size: var(--type-small);
+    line-height: 1.6;
+    color: rgba(238,240,236,0.7);
+    max-width: 38ch;
+  }
+  footer.site-footer h5 {
+    font-family: var(--font-mono);
+    font-size: var(--type-eyebrow); letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--canopy);
+    font-weight: 400; margin: 0 0 var(--space-m);
+  }
+  footer.site-footer ul { list-style: none; padding: 0; margin: 0; }
+  footer.site-footer ul li { padding: 4px 0; font-size: var(--type-small); }
+  footer.site-footer ul li a { color: var(--stone); text-decoration: none; transition: color 220ms ease; }
+  footer.site-footer ul li a:hover { color: var(--canopy); }
+  footer.site-footer .meta-row {
+    grid-column: 1 / -1;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-l);
+    border-top: 1px solid rgba(238,240,236,0.14);
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: var(--type-eyebrow); letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(238,240,236,0.5);
+  }
+  footer.site-footer .social-lockup {
+    border-left: 0; padding-left: 0; margin: 0;
+  }
+  footer.site-footer .social-lockup a { color: rgba(238,240,236,0.7); }
+  footer.site-footer .social-lockup a:hover { color: var(--canopy); }
+
+  /* ============================================================
+     PRIMITIVES · type, eyebrow, buttons, motifs
+     ============================================================ */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pine);
+    margin: 0;
+  }
+  .fr {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--trunk);
+  }
+  .fine-rule {
+    height: 1px; background: var(--canopy);
+    border: 0; margin: var(--space-2xl) 0;
+    width: 80px;
+  }
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 500; font-size: 15px; line-height: 1;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: var(--radius-default);
+    border: 0; cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .btn-inked { background: var(--trunk); color: var(--stone); }
+  .btn-inked:hover { background: var(--pine); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--trunk); border: 1px solid var(--trunk); }
+  .btn-ghost:hover { border-color: var(--canopy); color: var(--canopy); transform: translateY(-1px); }
+  .btn-link {
+    background: transparent; color: var(--trunk);
+    text-decoration: underline;
+    text-decoration-color: var(--canopy);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    padding: 14px 0;
+  }
+  .btn-link:hover { color: var(--pine); }
+
+  /* ============================================================
+     PAGE · masthead/hero
+     ============================================================ */
+  main { display: block; }
+
+  .masthead {
+    position: relative;
+    padding: 144px var(--page-padding) 120px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead .stage {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 20%, rgba(10,79,28,0.18), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 20% 80%, rgba(0,128,0,0.10), transparent 65%),
+      radial-gradient(circle at 50% 50%, transparent 30%, rgba(26,26,26,0.04) 80%);
+    pointer-events: none;
+  }
+  .masthead .inner {
+    position: relative;
+    max-width: var(--max-width); margin: 0 auto;
+  }
+  .masthead .eyebrow { margin-bottom: var(--space-xl); }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-display-xl);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin: 0 0 var(--space-xl);
+    color: var(--trunk);
+    max-width: 16ch;
+  }
+  .masthead h1 em {
+    font-style: italic;
+    color: var(--canopy);
+  }
+  .masthead .deck {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.35;
+    color: var(--trunk);
+    max-width: 720px;
+    margin: 0 0 var(--space-xl);
+  }
+  .masthead .byline {
+    font-family: var(--font-body);
+    font-size: var(--type-small);
+    color: var(--pine);
+    letter-spacing: 0.04em;
+  }
+  .masthead .byline strong { color: var(--trunk); font-weight: 600; }
+
+  /* ============================================================
+     LATEST FEED
+     ============================================================ */
+  section.latest {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.latest .inner { max-width: var(--max-width); margin: 0 auto; }
+  section.latest .eyebrow { margin-bottom: var(--space-2xl); }
+
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl) var(--space-l);
+  }
+  .article-card {
+    display: flex; flex-direction: column; gap: var(--space-m);
+    text-decoration: none; color: inherit;
+    transition: transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .article-card:hover { transform: translateY(-2px); }
+  .article-card .photo {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .article-card .photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(26,26,26,0.18) 100%);
+  }
+  .article-card .photo.opinion-1 {
+    background:
+      radial-gradient(ellipse at 30% 30%, #2c4530 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 70%, #1c2a1f 0%, transparent 60%),
+      linear-gradient(135deg, #1f2f24, #324233);
+  }
+  .article-card .photo.opinion-2 {
+    background:
+      radial-gradient(ellipse at 50% 30%, #3a4f3d 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 80%, #1a2419 0%, transparent 50%),
+      linear-gradient(160deg, #233323, #2d3e2c);
+  }
+  .article-card .photo.opinion-3 {
+    background:
+      radial-gradient(ellipse at 40% 60%, #2b3a2e 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, #3f5641 0%, transparent 65%),
+      linear-gradient(135deg, #1d2c20, #2b3c2c);
+  }
+  .article-card .photo.fieldnote-1 {
+    background:
+      radial-gradient(ellipse at 60% 40%, #4a5d3f 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, #2a3a2c 0%, transparent 60%),
+      linear-gradient(135deg, #2a3825, #3b4a30);
+  }
+  .article-card .photo.fieldnote-2 {
+    background:
+      radial-gradient(ellipse at 30% 50%, #3d4d36 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 30%, #233322 0%, transparent 60%),
+      linear-gradient(135deg, #1f2c1d, #2f3e2b);
+  }
+  .article-card .photo.code-1 {
+    background:
+      radial-gradient(ellipse at 50% 50%, #44574a 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 30%, #1f2b22 0%, transparent 60%),
+      linear-gradient(160deg, #2a352a, #3a463a);
+  }
+  .article-card .pillar {
+    font-family: var(--font-mono);
+    font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pine);
+  }
+  .article-card .pillar .dot { color: var(--canopy); margin: 0 6px; }
+  .article-card h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.12;
+    letter-spacing: -0.018em;
+    color: var(--trunk);
+    margin: 0;
+    transition: color 220ms ease;
+  }
+  .article-card h3 em { color: var(--canopy); font-style: italic; }
+  .article-card:hover h3 { color: var(--pine); }
+  .article-card .dek {
+    font-size: var(--type-body);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 38ch;
+  }
+  .feed-cta {
+    margin-top: var(--space-2xl);
+    text-align: center;
+  }
+
+  /* ============================================================
+     PILLAR TRIO
+     ============================================================ */
+  section.pillars {
+    padding: var(--space-4xl) var(--page-padding);
+    background: var(--loam);
+    border-bottom: 1px solid var(--line);
+  }
+  section.pillars .inner { max-width: var(--max-width); margin: 0 auto; }
+  section.pillars .eyebrow { margin-bottom: var(--space-l); }
+  section.pillars h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-h1);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin: 0 0 var(--space-3xl);
+    color: var(--trunk);
+    max-width: 18ch;
+  }
+  section.pillars h2 em { color: var(--canopy); font-style: italic; }
+
+  .pillar-trio {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-l);
+  }
+  .pillar-card {
+    background: var(--stone);
+    padding: var(--space-2xl);
+    border: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: var(--space-m);
+    transition: transform 380ms cubic-bezier(0.2,0.7,0.2,1), box-shadow 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .pillar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -16px rgba(26,26,26,0.18);
+  }
+  .pillar-card .num {
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 96px;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--canopy);
+    margin: 0 0 var(--space-l);
+  }
+  .pillar-card h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32px; line-height: 1.05;
+    margin: 0;
+    color: var(--trunk);
+  }
+  .pillar-card h3 em { color: var(--canopy); font-style: italic; font-weight: inherit; }
+  .pillar-card p {
+    font-size: var(--type-small);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+    flex: 1;
+  }
+  .pillar-card .cta { margin-top: var(--space-m); }
+
+  /* ============================================================
+     ABOUT-CALLOUT
+     ============================================================ */
+  section.about-callout {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.about-callout .inner {
+    max-width: var(--max-width); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-3xl);
+    align-items: start;
+  }
+  section.about-callout .eyebrow { margin-bottom: var(--space-m); }
+  section.about-callout p {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-h3);
+    line-height: 1.4;
+    color: var(--trunk);
+    margin: 0 0 var(--space-l);
+    max-width: 56ch;
+  }
+  section.about-callout p em { color: var(--canopy); font-style: italic; }
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+  @keyframes em-breathe {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.06); opacity: 0.92; }
+  }
+  .wordmark-link .disc,
+  footer .end .disc,
+  .masthead h1 + h1 .disc {
+    transform-origin: center;
+    animation: em-breathe 4200ms cubic-bezier(0.45,0,0.55,1) infinite;
+    will-change: transform, opacity;
+  }
+  /* nav-mark disc stays still on the sticky bar */
+  header.site-nav .wordmark-link .disc { animation: none; }
+
+  @keyframes em-drift {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    50%  { transform: translate3d(-1.2%, -1.6%, 0) scale(1.03); }
+    100% { transform: translate3d(0,0,0) scale(1); }
+  }
+  .masthead .stage {
+    animation: em-drift 28s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  section.latest, section.pillars, section.about-callout {
+    opacity: 0; transform: translateY(16px);
+    transition:
+      opacity 720ms cubic-bezier(0.2,0.7,0.2,1),
+      transform 720ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  section.latest.in-view, section.pillars.in-view, section.about-callout.in-view {
+    opacity: 1; transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wordmark-link .disc, footer .end .disc, .masthead .stage { animation: none !important; }
+    section.latest, section.pillars, section.about-callout { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .article-card:hover, .pillar-card:hover, .btn-inked:hover, .btn-ghost:hover { transform: none; }
+  }
+
+  /* responsive */
+  @media (max-width: 980px) {
+    :root { --page-padding: 24px; }
+    .feed-grid { grid-template-columns: repeat(2, 1fr); }
+    .pillar-trio { grid-template-columns: 1fr; }
+    section.about-callout .inner { grid-template-columns: 1fr; gap: var(--space-l); }
+    footer.site-footer .inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .feed-grid { grid-template-columns: 1fr; }
+    header.site-nav .nav-inner { gap: 16px; flex-wrap: wrap; height: auto; padding: 14px 0; }
+    header.site-nav .nav-link, header.site-nav .social-lockup { display: none; }
+    header.site-nav .nav-link.always-show { display: inline-block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark-link">Experience Managed<span class="disc" aria-hidden="true"></span></a>
+    <a href="/opinion" class="nav-link">Opinion</a>
+    <a href="/code-patterns" class="nav-link">Code patterns</a>
+    <a href="/field-notes" class="nav-link">Field notes</a>
+    <a href="/about" class="nav-link">About</a>
+    <span class="social-lockup" aria-label="Subscribe and social">
+      <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+      <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+      <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+    </span>
+  </div>
+</header>
+
+<main>
+
+<!-- MASTHEAD -->
+<section class="masthead">
+  <div class="stage" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="eyebrow">Experience Managed · Established 2026</p>
+    <h1><em>Thoughts</em> on content management.</h1>
+    <p class="deck">A working publication on content management — written from <em>real-world conversations & observations</em>. If it exists here, it seemed important at the time.</p>
+    <p class="byline">By <strong>Chris Millar</strong> · 14 pieces · Updated April 2026</p>
+  </div>
+</section>
+
+<!-- LATEST FEED -->
+<section class="latest">
+  <div class="inner">
+    <p class="eyebrow">Latest</p>
+
+    <div class="feed-grid">
+      <a class="article-card" href="/article/seven-deadly-sins-eds">
+        <div class="photo opinion-1"></div>
+        <div class="pillar">Opinion <span class="dot">·</span> 28 Apr 2026</div>
+        <h3>The seven deadly sins of <em>Edge Delivery</em> development.</h3>
+        <p class="dek">A working list of mistakes I see across teams adopting EDS — and the small habits that fix most of them.</p>
+      </a>
+
+      <a class="article-card" href="/article/claude-polish">
+        <div class="photo fieldnote-1"></div>
+        <div class="pillar">Field notes <span class="dot">·</span> 22 Apr 2026</div>
+        <h3>Claude can be <em>shockingly</em> good at polish if you let it.</h3>
+        <p class="dek">A pattern from three recent projects: hand the model the boring part, keep the position. The output gets sharper, not duller.</p>
+      </a>
+
+      <a class="article-card" href="/article/brand-equity-vs-money">
+        <div class="photo opinion-2"></div>
+        <div class="pillar">Opinion <span class="dot">·</span> 14 Apr 2026</div>
+        <h3>The <em>tension</em> between brand equity and making money.</h3>
+        <p class="dek">CMS conversations always end at the same wall. The wall is real — and it's the wrong one to break through.</p>
+      </a>
+
+      <a class="article-card" href="/article/decorate-without-framework">
+        <div class="photo code-1"></div>
+        <div class="pillar">Code patterns <span class="dot">·</span> 06 Apr 2026</div>
+        <h3>Decorating EDS blocks without a framework.</h3>
+        <p class="dek">Forty lines of vanilla JavaScript replaces most of what teams reach for a framework to do. Three real patterns.</p>
+      </a>
+
+      <a class="article-card" href="/article/document-as-truth">
+        <div class="photo opinion-3"></div>
+        <div class="pillar">Opinion <span class="dot">·</span> 28 Mar 2026</div>
+        <h3>The document is the <em>source</em> of truth.</h3>
+        <p class="dek">EDS asks an old question with new urgency: what is content for? The answer reshapes every workflow upstream of it.</p>
+      </a>
+
+      <a class="article-card" href="/article/week-three-incident">
+        <div class="photo fieldnote-2"></div>
+        <div class="pillar">Field notes <span class="dot">·</span> 19 Mar 2026</div>
+        <h3>The week-three incident.</h3>
+        <p class="dek">Every project has one. This time it was an asset pipeline that worked perfectly until it didn't. Notes from the bug.</p>
+      </a>
+    </div>
+
+    <div class="feed-cta">
+      <a href="#" class="btn btn-link">Load more pieces</a>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR TRIO -->
+<section class="pillars">
+  <div class="inner">
+    <p class="eyebrow">The pillars</p>
+    <h2>Three things <em>I write</em> about.</h2>
+
+    <div class="pillar-trio">
+      <article class="pillar-card">
+        <p class="num">01</p>
+        <h3>Opinion <em>—</em> to position.</h3>
+        <p>Long-form positions on industry direction, platform decisions, the state of CMS work. The thought-leadership read for leaders; the position-piece for engineers who want a take.</p>
+        <a href="/opinion" class="btn btn-ghost cta">Browse Opinion</a>
+      </article>
+      <article class="pillar-card">
+        <p class="num">02</p>
+        <h3>Code patterns <em>—</em> to equip.</h3>
+        <p>Short, reusable techniques for AEM and Edge Delivery — copy-paste-friendly, no framework required. Excellent code typography; layout gets out of the way.</p>
+        <a href="/code-patterns" class="btn btn-ghost cta">Browse Code patterns</a>
+      </article>
+      <article class="pillar-card">
+        <p class="num">03</p>
+        <h3>Field notes <em>—</em> to witness.</h3>
+        <p>Short observations from real client work. A logbook register: specific, dated, lower stakes. The pillar that builds credibility through accumulation.</p>
+        <a href="/field-notes" class="btn btn-ghost cta">Browse Field notes</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CALLOUT -->
+<section class="about-callout">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">About the writer</p>
+    </div>
+    <div>
+      <p>Chris Millar writes <em>Experience Managed.</em> He works at Adobe; this blog is independent of Adobe. He writes when there's something he wants in writing — and is loyal to humans making things, AI-assisted included.</p>
+      <a href="/about" class="btn btn-link">Read the about page</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <p class="end">Experience Managed<span class="disc" aria-hidden="true"></span></p>
+      <p class="deck">Thoughts on content management — a working publication on AEM and Edge Delivery. By Chris Millar. Independent of Adobe.</p>
+    </div>
+    <div>
+      <h5>The pillars</h5>
+      <ul>
+        <li><a href="/opinion">Opinion</a></li>
+        <li><a href="/code-patterns">Code patterns</a></li>
+        <li><a href="/field-notes">Field notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>The publication</h5>
+      <ul>
+        <li><a href="/about">About &amp; colophon</a></li>
+        <li><a href="mailto:chris@experiencemanaged.com">Contact</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow along</h5>
+      <span class="social-lockup">
+        <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+        <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+        <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+      </span>
+    </div>
+    <div class="meta-row">
+      <span>© 2026 Chris Millar</span>
+      <span>Built with Adobe Edge Delivery Services</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('section.latest, section.pillars, section.about-callout').forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('section.latest, section.pillars, section.about-callout').forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+  document.querySelectorAll('section.latest, section.pillars, section.about-callout').forEach(s => io.observe(s));
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-28
+  variant_direction: single — editorial bones, modern skin, photography-led restraint
+  imagery_mode: placeholder
+  synthesized_inputs:
+    - article body copy: assistant-drafted as a convincing Field note example using "Claude can be shockingly good at polish if you let it" — designer authors real per-piece copy at publish time
+    - "More from Field notes" trio cards: synthesized example titles
+    - publish date / read time: example values
+  note: prototype iteration target. Article template — per-piece copy authored at publish time. Structural treatment IS authoritative.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude can be shockingly good at polish if you let it · Experience Managed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/uez3qis.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --stone: #EEF0EC;
+    --loam: #E2E6DF;
+    --canopy: #008000;
+    --pine: #0A4F1C;
+    --trunk: #1A1A1A;
+    --line: rgba(26,26,26,0.14);
+    --ink-soft: rgba(26,26,26,0.72);
+    --ink-faint: rgba(26,26,26,0.48);
+    --font-display: 'ivyora-display', Georgia, 'Times New Roman', serif;
+    --font-body: 'ivyepic-variable', 'Manrope', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --type-display-xl: clamp(72px, 10vw, 144px);
+    --type-display: clamp(48px, 6vw, 88px);
+    --type-h1: clamp(36px, 4.5vw, 64px);
+    --type-h2: 44px;
+    --type-h3: 28px;
+    --type-h4: 22px;
+    --type-body-lg: 20px;
+    --type-body: 18px;
+    --type-small: 14px;
+    --type-eyebrow: 11px;
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 16px;
+    --space-l: 24px;
+    --space-xl: 40px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+    --space-4xl: 128px;
+    --max-width: 1280px;
+    --reading-width: 64ch;
+    --page-padding: 40px;
+    --navbar-height: 72px;
+    --radius-default: 4px;
+    --radius-disc: 50%;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--stone); color: var(--trunk);
+    font-family: var(--font-body); font-size: var(--type-body);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+
+  /* === CHROME === */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(238,240,236,0.94);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 var(--page-padding);
+  }
+  header.site-nav .nav-inner {
+    max-width: var(--max-width); margin: 0 auto;
+    padding: 18px 0;
+    display: flex; align-items: center; gap: 28px; height: var(--navbar-height);
+  }
+  .wordmark-link {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px; color: var(--trunk); text-decoration: none;
+    letter-spacing: -0.015em; line-height: 1; margin-right: auto;
+  }
+  .wordmark-link .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 6%; margin-left: 0.08em;
+  }
+  .nav-link {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--pine); text-decoration: none;
+    position: relative; padding: 8px 0;
+    transition: color 220ms ease;
+  }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: 2px;
+    height: 1px; background: var(--canopy);
+    transition: right 280ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .nav-link:hover, .nav-link.active { color: var(--canopy); }
+  .nav-link:hover::after, .nav-link.active::after { right: 0; }
+  .social-lockup {
+    display: flex; gap: 14px; margin-left: 8px;
+    padding-left: 24px; border-left: 1px solid var(--line);
+    align-items: center; height: 28px;
+  }
+  .social-lockup a {
+    color: var(--pine);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px;
+    transition: color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .social-lockup a:hover { color: var(--canopy); transform: translateY(-1px); }
+  .social-lockup svg { width: 100%; height: 100%; fill: currentColor; }
+
+  footer.site-footer {
+    background: var(--trunk); color: var(--stone);
+    padding: var(--space-3xl) var(--page-padding) var(--space-xl);
+    margin-top: var(--space-4xl);
+  }
+  footer.site-footer .inner {
+    max-width: var(--max-width); margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl);
+  }
+  footer.site-footer .end {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 56px; line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 var(--space-l); color: var(--stone);
+  }
+  footer.site-footer .end .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 8%; margin-left: 0.06em;
+  }
+  footer.site-footer .deck {
+    font-size: var(--type-small); line-height: 1.6;
+    color: rgba(238,240,236,0.7); max-width: 38ch;
+  }
+  footer.site-footer h5 {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--canopy);
+    font-weight: 400; margin: 0 0 var(--space-m);
+  }
+  footer.site-footer ul { list-style: none; padding: 0; margin: 0; }
+  footer.site-footer ul li { padding: 4px 0; font-size: var(--type-small); }
+  footer.site-footer ul li a { color: var(--stone); text-decoration: none; transition: color 220ms ease; }
+  footer.site-footer ul li a:hover { color: var(--canopy); }
+  footer.site-footer .meta-row {
+    grid-column: 1 / -1; margin-top: var(--space-2xl);
+    padding-top: var(--space-l); border-top: 1px solid rgba(238,240,236,0.14);
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(238,240,236,0.5);
+  }
+  footer.site-footer .social-lockup { border-left: 0; padding-left: 0; margin: 0; }
+  footer.site-footer .social-lockup a { color: rgba(238,240,236,0.7); }
+  footer.site-footer .social-lockup a:hover { color: var(--canopy); }
+
+  /* === PRIMITIVES === */
+  .eyebrow {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--pine); margin: 0;
+  }
+  .btn {
+    display: inline-block; font-family: var(--font-body);
+    font-weight: 500; font-size: 15px; line-height: 1;
+    text-decoration: none; padding: 14px 28px;
+    border-radius: var(--radius-default); border: 0; cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .btn-inked { background: var(--trunk); color: var(--stone); }
+  .btn-inked:hover { background: var(--pine); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--trunk); border: 1px solid var(--trunk); }
+  .btn-ghost:hover { border-color: var(--canopy); color: var(--canopy); transform: translateY(-1px); }
+  .btn-link {
+    background: transparent; color: var(--trunk);
+    text-decoration: underline; text-decoration-color: var(--canopy);
+    text-decoration-thickness: 1px; text-underline-offset: 4px;
+    padding: 14px 0;
+  }
+  .btn-link:hover { color: var(--pine); }
+
+  /* === ARTICLE HERO (atmospheric photo behind type) === */
+  .article-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex; align-items: flex-end;
+    padding: var(--space-3xl) var(--page-padding) var(--space-2xl);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-hero .stage {
+    position: absolute; inset: 0;
+    /* Field notes pillar: incidental, moss-and-rain DNA */
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 40%, #4a5d3f 0%, transparent 55%),
+      radial-gradient(ellipse 70% 60% at 75% 65%, #1f3325 0%, transparent 60%),
+      radial-gradient(ellipse 80% 70% at 55% 85%, #2c3d2d 0%, transparent 65%),
+      linear-gradient(135deg, #1a2a1d 0%, #2a3825 60%, #3b4a30 100%);
+    background-size: 120% 120%;
+    background-position: 50% 50%;
+  }
+  .article-hero .stage::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 30%),
+      radial-gradient(circle at 80% 70%, rgba(0,0,0,0.35), transparent 50%);
+    filter: blur(28px);
+  }
+  .article-hero .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(26,26,26,0.45) 100%);
+    pointer-events: none;
+  }
+  .article-hero .inner {
+    position: relative; z-index: 2;
+    max-width: var(--max-width); margin: 0 auto; width: 100%;
+  }
+  .article-hero .pad {
+    background: rgba(238,240,236,0.94);
+    padding: var(--space-2xl) var(--space-2xl) var(--space-xl);
+    max-width: 760px;
+    border-left: 3px solid var(--canopy);
+  }
+  .article-hero .pad .eyebrow { margin-bottom: var(--space-m); }
+  .article-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: var(--trunk);
+    margin: 0 0 var(--space-l);
+  }
+  .article-hero h1 em { color: var(--canopy); font-style: italic; }
+  .article-hero .dek {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin: 0 0 var(--space-l);
+    max-width: 56ch;
+  }
+  .article-hero .byline {
+    font-family: var(--font-body);
+    font-size: var(--type-small);
+    color: var(--pine);
+    letter-spacing: 0.04em;
+  }
+  .article-hero .byline strong { color: var(--trunk); font-weight: 600; }
+  .article-hero .photo-credit {
+    position: absolute; bottom: var(--space-l); right: var(--space-l);
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(238,240,236,0.7); z-index: 2;
+  }
+
+  /* === ARTICLE BODY === */
+  article.body {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  article.body .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+  }
+  article.body p {
+    font-size: var(--type-body); line-height: 1.65;
+    color: var(--trunk); margin: 0 0 var(--space-l);
+  }
+  article.body p.lede::first-letter {
+    /* very subtle, no drop cap fancy */
+  }
+  article.body p.lede {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.45;
+    color: var(--trunk);
+    margin-bottom: var(--space-xl);
+  }
+  article.body strong { color: var(--pine); font-weight: 600; }
+  article.body a { color: var(--pine); text-decoration: underline; text-decoration-color: var(--canopy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  article.body a:hover { color: var(--canopy); }
+  article.body code {
+    font-family: var(--font-mono); font-size: 0.92em;
+    background: var(--loam); padding: 1px 6px;
+    color: var(--pine);
+  }
+
+  article.body .fine-rule {
+    height: 1px; background: var(--canopy);
+    border: 0; margin: var(--space-3xl) auto;
+    width: 80px;
+  }
+
+  article.body blockquote {
+    margin: var(--space-2xl) -32px;
+    padding: var(--space-l) 0 var(--space-l) var(--space-l);
+    border-left: 3px solid var(--canopy);
+  }
+  article.body blockquote p {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: var(--trunk);
+    margin: 0;
+  }
+
+  article.body pre {
+    font-family: var(--font-mono); font-size: 14px;
+    line-height: 1.7;
+    background: var(--loam);
+    padding: var(--space-l) var(--space-l) var(--space-l) calc(var(--space-l) - 3px);
+    border-left: 3px solid var(--canopy);
+    margin: var(--space-xl) 0;
+    overflow-x: auto;
+    color: var(--trunk);
+  }
+  article.body pre .com { color: var(--ink-faint); font-style: italic; }
+  article.body pre .kw { color: var(--pine); font-weight: 500; }
+  article.body pre .str { color: #a14b00; }
+
+  article.body ul {
+    margin: 0 0 var(--space-l) 0;
+    padding-left: var(--space-l);
+  }
+  article.body ul li {
+    margin-bottom: var(--space-s);
+    line-height: 1.6;
+  }
+  article.body ul li::marker { color: var(--canopy); }
+
+  article.body h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: var(--space-2xl) 0 var(--space-l);
+    color: var(--trunk);
+  }
+
+  /* === END-OF-ARTICLE === */
+  section.eoa-share {
+    padding: var(--space-2xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.eoa-share .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+    display: flex; align-items: center; gap: var(--space-l);
+  }
+  section.eoa-share .eyebrow { margin: 0; }
+  section.eoa-share .social-lockup { border-left: 0; padding-left: 0; }
+
+  section.eoa-related {
+    padding: var(--space-4xl) var(--page-padding);
+    background: var(--loam);
+    border-bottom: 1px solid var(--line);
+  }
+  section.eoa-related .inner { max-width: var(--max-width); margin: 0 auto; }
+  section.eoa-related .head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: var(--space-2xl);
+  }
+  section.eoa-related h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 36px;
+    margin: 0;
+    color: var(--trunk);
+    letter-spacing: -0.02em;
+  }
+
+  .related-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-l);
+  }
+  .article-card {
+    display: flex; flex-direction: column; gap: var(--space-m);
+    text-decoration: none; color: inherit;
+    transition: transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .article-card:hover { transform: translateY(-2px); }
+  .article-card .photo {
+    aspect-ratio: 16 / 10; width: 100%; overflow: hidden; position: relative;
+  }
+  .article-card .photo::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(26,26,26,0.18) 100%);
+  }
+  .article-card .photo.fieldnote-a {
+    background:
+      radial-gradient(ellipse at 30% 50%, #3d4d36 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 30%, #233322 0%, transparent 60%),
+      linear-gradient(135deg, #1f2c1d, #2f3e2b);
+  }
+  .article-card .photo.fieldnote-b {
+    background:
+      radial-gradient(ellipse at 60% 40%, #4a5d3f 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, #2a3a2c 0%, transparent 60%),
+      linear-gradient(135deg, #2a3825, #3b4a30);
+  }
+  .article-card .photo.fieldnote-c {
+    background:
+      radial-gradient(ellipse at 50% 60%, #3a4f3d 0%, transparent 55%),
+      radial-gradient(ellipse at 25% 30%, #1d2c20 0%, transparent 60%),
+      linear-gradient(160deg, #2a3a2a, #3a4a35);
+  }
+  .article-card .pillar {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--pine);
+  }
+  .article-card .pillar .dot { color: var(--canopy); margin: 0 6px; }
+  .article-card h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px; line-height: 1.12;
+    letter-spacing: -0.018em; color: var(--trunk); margin: 0;
+    transition: color 220ms ease;
+  }
+  .article-card h3 em { color: var(--canopy); font-style: italic; }
+  .article-card:hover h3 { color: var(--pine); }
+  .article-card .dek {
+    font-size: var(--type-body); line-height: 1.5;
+    color: var(--ink-soft); margin: 0; max-width: 38ch;
+  }
+
+  section.eoa-about {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.eoa-about .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+  }
+  section.eoa-about .eyebrow { margin-bottom: var(--space-m); }
+  section.eoa-about p {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px; line-height: 1.45; color: var(--trunk);
+    margin: 0 0 var(--space-l);
+  }
+  section.eoa-about p em { color: var(--canopy); font-style: italic; }
+
+  /* motion */
+  @keyframes em-breathe {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.06); opacity: 0.92; }
+  }
+  footer .end .disc {
+    transform-origin: center;
+    animation: em-breathe 4200ms cubic-bezier(0.45,0,0.55,1) infinite;
+    will-change: transform, opacity;
+  }
+  @keyframes em-drift-slow {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    33%  { transform: translate3d(0.5%, -0.8%, 0) scale(1.02); }
+    66%  { transform: translate3d(-0.6%, 0.4%, 0) scale(1.015); }
+    100% { transform: translate3d(0,0,0) scale(1); }
+  }
+  .article-hero .stage {
+    animation: em-drift-slow 40s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  article.body, section.eoa-share, section.eoa-related, section.eoa-about {
+    opacity: 0; transform: translateY(16px);
+    transition:
+      opacity 720ms cubic-bezier(0.2,0.7,0.2,1),
+      transform 720ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  article.body.in-view, section.eoa-share.in-view, section.eoa-related.in-view, section.eoa-about.in-view {
+    opacity: 1; transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-hero .stage, footer .end .disc { animation: none !important; }
+    article.body, section.eoa-share, section.eoa-related, section.eoa-about {
+      opacity: 1 !important; transform: none !important; transition: none !important;
+    }
+    .article-card:hover, .btn-inked:hover, .btn-ghost:hover { transform: none; }
+  }
+
+  @media (max-width: 980px) {
+    :root { --page-padding: 24px; }
+    .related-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    footer.site-footer .inner { grid-template-columns: 1fr 1fr; }
+    .article-hero .pad { padding: var(--space-l) var(--space-l) var(--space-m); }
+    article.body blockquote { margin: var(--space-2xl) 0; }
+  }
+  @media (max-width: 640px) {
+    header.site-nav .nav-inner { gap: 16px; flex-wrap: wrap; height: auto; padding: 14px 0; }
+    header.site-nav .nav-link, header.site-nav .social-lockup { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark-link">Experience Managed<span class="disc" aria-hidden="true"></span></a>
+    <a href="/opinion" class="nav-link">Opinion</a>
+    <a href="/code-patterns" class="nav-link">Code patterns</a>
+    <a href="/field-notes" class="nav-link active">Field notes</a>
+    <a href="/about" class="nav-link">About</a>
+    <span class="social-lockup">
+      <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+      <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+      <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+    </span>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="article-hero">
+  <div class="stage" aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="inner">
+    <div class="pad">
+      <p class="eyebrow">Field notes &nbsp;·&nbsp; 22 Apr 2026</p>
+      <h1>Claude can be <em>shockingly</em> good at polish if you let it.</h1>
+      <p class="dek">A pattern from three recent projects: hand the model the boring part, keep the position. The output gets sharper, not duller.</p>
+      <p class="byline">By <strong>Chris Millar</strong> · 6 min read</p>
+    </div>
+  </div>
+  <span class="photo-credit">Photo · placeholder</span>
+</section>
+
+<!-- BODY -->
+<article class="body">
+  <div class="inner">
+    <p class="lede">A pattern I've noticed across three recent projects: the parts of the work I expected Claude to be useful for — generating prose, summarising, "ideating" — were the parts where it produced the least useful output. The parts I assumed it would handicap me on — polish, restructuring, naming, the small consistency work that makes a piece feel finished — turned out to be where it shone.</p>
+
+    <p>Polish is patience. The model has more of it than I do.</p>
+
+    <p>This isn't a post about AI replacing writers. It's a post about how a writer's relationship to the work changes when the most boring part of the job becomes optional.</p>
+
+    <hr class="fine-rule">
+
+    <p>The model is patient in a way I'm not. It will read every paragraph as if it had never read one before. It will notice that I used <strong>"platform"</strong> four times in three sentences. It will catch the lede that doesn't actually lede. It will offer five alternatives, three of which are bad in instructive ways.</p>
+
+    <p>I've stopped asking it to write. I ask it to read.</p>
+
+    <blockquote>
+      <p>I've stopped asking it to write. I ask it to read.</p>
+    </blockquote>
+
+    <p>The shape of the prompt that works is small:</p>
+
+<pre><span class="com">// the prompt I send before publishing anything</span>
+You are reading this draft. <span class="kw">Don't</span> rewrite it. Read it.
+
+For each paragraph, tell me:
+  <span class="str">•</span> the verb working hardest
+  <span class="str">•</span> the phrase you'd cut without asking
+  <span class="str">•</span> whether the paragraph repeats the previous one
+
+<span class="kw">Don't</span> soften. <span class="kw">Don't</span> diplomat. Read.</pre>
+
+    <p>The first time I did this, I was suspicious. I expected the model to soften my position — to round the edges, smooth the rhetoric, default to the diplomatic move. It didn't. The corrections it offered were almost all sharper than my originals. <code>"Comprehensive guide"</code> became <code>"guide."</code> <code>"It is important to note"</code> became deletion. <code>"There are several reasons"</code> became <code>"Three reasons."</code> Every change tightened the screw.</p>
+
+    <hr class="fine-rule">
+
+    <h2>What I've stopped doing</h2>
+
+    <ul>
+      <li>Asking the model to draft. The drafts are mine.</li>
+      <li>Asking it to "make this better." The instruction is too vague; the model interprets <em>better</em> as <em>smoother</em>, which is usually worse.</li>
+      <li>Trusting the model on stance. If I said something with intent, the model's first instinct is to make it more agreeable. That instinct is wrong.</li>
+    </ul>
+
+    <h2>What I do instead</h2>
+
+    <ul>
+      <li>I write the piece, then I ask the model to find every paragraph that says the same thing as the previous paragraph.</li>
+      <li>I ask it to find sentences where the verb is <em>is</em> and propose alternatives where the verb does work.</li>
+      <li>I ask it which sentence I could cut. I don't ask <em>if</em> I should — I ask <em>which</em>.</li>
+    </ul>
+
+    <p>The work is sharper. The position is mine.</p>
+
+    <hr class="fine-rule">
+
+    <p>There's a version of this argument that lands the wrong way. <em>Real writers don't let AI touch their work</em> — that's the version I want to disagree with. There's also the version that lands too eagerly: <em>Use AI for everything, you'll be 10x faster!</em> — that's the version I find embarrassing.</p>
+
+    <p>The truthful version is small. A working writer has a long backlog of polish moves they don't make because they're tired. The model can do those moves at any hour, in any state, without needing to be paid in attention. That's the work it should do.</p>
+
+    <p><strong>The thinking is still ours.</strong> If you let it.</p>
+  </div>
+</article>
+
+<!-- SHARE ROW -->
+<section class="eoa-share">
+  <div class="inner">
+    <p class="eyebrow">Share this piece</p>
+    <span class="social-lockup">
+      <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+      <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+      <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+    </span>
+  </div>
+</section>
+
+<!-- MORE FROM PILLAR -->
+<section class="eoa-related">
+  <div class="inner">
+    <div class="head">
+      <h2>More <em style="font-style:italic;color:var(--canopy);">field notes</em>.</h2>
+      <a href="/field-notes" class="btn btn-link">Browse all</a>
+    </div>
+    <div class="related-grid">
+      <a class="article-card" href="/article/week-three-incident">
+        <div class="photo fieldnote-a"></div>
+        <div class="pillar">Field notes <span class="dot">·</span> 19 Mar 2026</div>
+        <h3>The week-three incident.</h3>
+        <p class="dek">Every project has one. This time it was an asset pipeline that worked perfectly until it didn't.</p>
+      </a>
+      <a class="article-card" href="/article/strange-cache">
+        <div class="photo fieldnote-b"></div>
+        <div class="pillar">Field notes <span class="dot">·</span> 02 Mar 2026</div>
+        <h3>The cache that <em>almost</em> worked.</h3>
+        <p class="dek">A real bug that took two weeks to find and ten lines to fix. Notes on the chase.</p>
+      </a>
+      <a class="article-card" href="/article/three-projects-one-pattern">
+        <div class="photo fieldnote-c"></div>
+        <div class="pillar">Field notes <span class="dot">·</span> 12 Feb 2026</div>
+        <h3>Three projects, one pattern.</h3>
+        <p class="dek">When the same shape of problem keeps showing up, the problem isn't the project. It's the assumption everyone shares.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CALLOUT -->
+<section class="eoa-about">
+  <div class="inner">
+    <p class="eyebrow">About the writer</p>
+    <p>Chris Millar writes <em>Experience Managed.</em> He works at Adobe; this blog is independent of Adobe. He writes when there's something he wants in writing — and is loyal to humans making things, AI-assisted included.</p>
+    <a href="/about" class="btn btn-link">Read the about page</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <p class="end">Experience Managed<span class="disc" aria-hidden="true"></span></p>
+      <p class="deck">Thoughts on content management — a working publication on AEM and Edge Delivery. By Chris Millar. Independent of Adobe.</p>
+    </div>
+    <div>
+      <h5>The pillars</h5>
+      <ul>
+        <li><a href="/opinion">Opinion</a></li>
+        <li><a href="/code-patterns">Code patterns</a></li>
+        <li><a href="/field-notes">Field notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>The publication</h5>
+      <ul>
+        <li><a href="/about">About &amp; colophon</a></li>
+        <li><a href="mailto:chris@experiencemanaged.com">Contact</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow along</h5>
+      <span class="social-lockup">
+        <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+        <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+        <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+      </span>
+    </div>
+    <div class="meta-row">
+      <span>© 2026 Chris Millar</span>
+      <span>Built with Adobe Edge Delivery Services</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const targets = 'article.body, section.eoa-share, section.eoa-related, section.eoa-about';
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll(targets).forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+  document.querySelectorAll(targets).forEach(s => io.observe(s));
+})();
+</script>
+
+</body>
+</html>

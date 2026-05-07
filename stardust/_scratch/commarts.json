@@ -1,0 +1,187 @@
+{
+  "url": "https://www.commarts.com/",
+  "title": "Communication Arts",
+  "cssVars": {},
+  "bodyStyle": {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Greta Sans Regular 6\"",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "fontFamilies": [
+    "\"Greta Sans Regular 6\"",
+    "\"Greta Sans Compressed SemAwAcl\"",
+    "\"Greta Sans SemiBold 4\"",
+    "\"Greta Sans ExtraLight 3\"",
+    "\"Greta Sans Compressed Ext7meF8\"",
+    "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "\"Greta Sans Light 8\"",
+    "\"Font Awesome 5 Brands\"",
+    "\"Font Awesome 5 Free\"",
+    "\"Greta Sans Compressed 2\"",
+    "\"Greta Sans Bold 8\"",
+    "\"Greta Sans SemiBold Italic 3\""
+  ],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "COMMUNICATION ARTS",
+      "fontFamily": "\"Greta Sans Compressed 2\"",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSize": "48px",
+      "lineHeight": "48px",
+      "letterSpacing": "0.96px",
+      "color": "rgb(0, 0, 0)",
+      "textTransform": "uppercase"
+    },
+    {
+      "tag": "H1",
+      "text": "COMMUNICATION ARTS",
+      "fontFamily": "\"Greta Sans Compressed 2\"",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSize": "44px",
+      "lineHeight": "44px",
+      "letterSpacing": "0.96px",
+      "color": "rgb(255, 255, 255)",
+      "textTransform": "uppercase"
+    }
+  ],
+  "paragraphs": [
+    {
+      "text": "©2026 Coyne & Blanchard, Inc. All rights Reserved.",
+      "fontFamily": "\"Greta Sans Regular 6\"",
+      "fontWeight": "400",
+      "fontSize": "12px",
+      "lineHeight": "18px",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1"
+    }
+  ],
+  "italics": [],
+  "ctas": [
+    {
+      "text": "DISCIPLINES",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "fontFamily": "\"Greta Sans Compressed SemAwAcl\"",
+      "fontWeight": "400",
+      "textTransform": "uppercase",
+      "letterSpacing": "0.52px"
+    },
+    {
+      "text": "Subscribe",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "fontFamily": "\"Greta Sans SemiBold 4\"",
+      "fontWeight": "400",
+      "textTransform": "none",
+      "letterSpacing": "0.64px"
+    },
+    {
+      "text": "Get Our Newsletter",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "fontFamily": "\"Greta Sans SemiBold 4\"",
+      "fontWeight": "400",
+      "textTransform": "none",
+      "letterSpacing": "0.64px"
+    },
+    {
+      "text": "Get Our Newsletter",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "padding": "12px 0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "fontFamily": "\"Greta Sans Light 8\"",
+      "fontWeight": "400",
+      "textTransform": "none",
+      "letterSpacing": "0.84px"
+    },
+    {
+      "text": "See the winners gallery",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "24px 45px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "fontFamily": "\"Greta Sans Bold 8\"",
+      "fontWeight": "400",
+      "textTransform": "none",
+      "letterSpacing": "0.64px"
+    },
+    {
+      "text": "Get this in my inbox",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "padding": "32px 0px 0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "fontFamily": "\"Greta Sans Bold 8\"",
+      "fontWeight": "400",
+      "textTransform": "none",
+      "letterSpacing": "0.96px"
+    }
+  ],
+  "surfaces": [],
+  "heroCopy": [
+    "COMMUNICATION ARTS",
+    "COMMUNICATION ARTS"
+  ],
+  "meta": {
+    "description": "Print publication showcasing exceptional design, advertising, illustration, photography, interactive and typography.",
+    "og:image": "https://www.commarts.com/content/images/logo.png",
+    "og:title": "Communication Arts",
+    "og:description": "Print publication showcasing exceptional design, advertising, illustration, photography, interactive and typography.",
+    "twitter:title": "Communication Arts"
+  },
+  "logos": [
+    {
+      "kind": "img",
+      "src": "https://www.commarts.com/content/images/logo-small.png",
+      "alt": "",
+      "w": 90,
+      "h": 74
+    },
+    {
+      "kind": "img",
+      "src": "https://www.commarts.com/content/images/logo-small.png",
+      "alt": "",
+      "w": 90,
+      "h": 74
+    },
+    {
+      "kind": "img",
+      "src": "https://www.commarts.com/content/images/logo.png",
+      "alt": "",
+      "w": 290,
+      "h": 239
+    },
+    {
+      "kind": "img",
+      "src": "https://www.commarts.com/content/images/chl-logo.png",
+      "alt": "",
+      "w": 360,
+      "h": 58
+    },
+    {
+      "kind": "img",
+      "src": "https://www.commarts.com/content/images/logo-white.png",
+      "alt": "",
+      "w": 223,
+      "h": 184
+    }
+  ]
+}

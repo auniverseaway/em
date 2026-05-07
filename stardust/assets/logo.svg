@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120" width="720" height="120" role="img" aria-label="Experience Managed">
+  <defs>
+    <style type="text/css">
+      @import url('https://use.typekit.net/uez3qis.css');
+      .em-wordmark { font-family: 'fraunces-variable', 'Fraunces', 'Times New Roman', serif; font-weight: 350; font-size: 88px; font-variation-settings: "opsz" 144, "SOFT" 0; letter-spacing: -0.02em; fill: #1A1A1A; }
+    </style>
+  </defs>
+  <text class="em-wordmark" x="0" y="92">Experience Managed</text>
+  <circle cx="700" cy="84" r="14" fill="#008000"/>
+</svg>

@@ -1,0 +1,421 @@
+{
+  "_provenance": {
+    "generated_by": "brand",
+    "date": "2026-04-28",
+    "source": "conversation",
+    "extraction_method": "Reference anchors (commarts.com, mindsparklemag.com) extracted via Playwright (Chromium 1440x900 @ 2x DPR, networkidle + 1.5s settle), then a designer-led interview (10 questions) inside the brainstorming skill. Brand identity is for Experience Managed, NOT for the reference sites — they served as visual anchors that pinned editorial register, type ambition, and what to avoid.",
+    "synthesized_inputs": [
+      "logo — synthesized text wordmark SVG. The brand has no existing mark; the SVG renders 'Experience Managed' in IvyOra Display with a Canopy-green disc as the trailing period.",
+      "personas — omitted (null). Designer specified audience descriptors (C-suite to IC engineers) but did not drill into per-persona detail. Synthesizing personas would import assistant defaults.",
+      "voice.examples.do — composed from designer's three sample headlines and the body copy I drafted in the type-pairings comparison. Real do-examples come once the writer publishes; these mirror the designer's stated voice signals.",
+      "voice.examples.dont — composed by the assistant to match the antiTraits. Not extracted from copy.",
+      "tone.writingGoals — composed from voice traits + content pillars; not designer-stated verbatim.",
+      "componentStyle.buttons.patterns — composed from designer's stated 'no pillowy pills, editorial bones' direction. The 4px border-radius is the assistant's read of 'soft-edge, not pillowy'; designer can override.",
+      "spacing.scale — synthesized 4-pt editorial scale; not designer-specified.",
+      "motifs — composed from interview signals (period-disc wordmark, atmospheric photography behind type, fine green section rule, IvyOra Display section numerals). Designer confirmed direction; specific values are assistant proposals.",
+      "tone.cleverVsClear — assistant interpretation of 'plainspoken' + 'opinionated' as 'default clear, clever earned in opening lines and closes only'.",
+      "Adobe Fonts kit wired (kit id uez3qis). Live families: ivyora-display (weights 100/300/400/500/600 + italics 100/300/400/500) and ivyepic-variable (wght axis 400–700 roman + italic). JetBrains Mono not in the kit; remains served from Google Fonts. Manrope kept only as a defense-in-depth fallback in the CSS stack."
+    ],
+    "screenshots": [
+      "stardust/_scratch/commarts-hero.png",
+      "stardust/_scratch/commarts-full.png",
+      "stardust/_scratch/mindsparkle-hero.png",
+      "stardust/_scratch/mindsparkle-full.png"
+    ],
+    "note": "Conversation-led brand for a personal publication; references were anchors, not the brand's own guidelines."
+  },
+
+  "_divergence": {
+    "toolkit_version": "v0.5.1",
+    "seed": {
+      "decade": null,
+      "craft": null,
+      "register": null,
+      "ground": "pale-gray",
+      "picked_by": "designer",
+      "overrides": ["ground", "decade", "craft", "register"],
+      "hash_input": null
+    },
+    "font_deck": null,
+    "palette_source": {
+      "method": "designer-provided",
+      "library_version": null,
+      "library_source": null,
+      "description_used": "CSS green #008000 anchor, reading among trees, no pinks/magentas, NO CREAM (designer rejected explicitly). Pale cool stone surface that lets the green and big abstract forest photography do the warmth work.",
+      "classification": {
+        "energy": 3,
+        "contrast": 4,
+        "saturation_level": 3,
+        "hue_bias": "green",
+        "ground_family": "pale-gray"
+      },
+      "candidates_shown": [],
+      "recommended_index": null,
+      "picked_index": null,
+      "picked_palette_name": "Trees & Stone (designer-composed)",
+      "picked_palette_source": null
+    },
+    "anti_toolbox_count": 1,
+    "anti_toolbox_hits": [
+      "Italic expressive serif used for single-word accents (IvyOra Display italic)"
+    ],
+    "divergence_justifications": [
+      {
+        "move": "Italic expressive serif used for single-word accents (IvyOra Display italic)",
+        "reason": "The italic of IvyOra Display is the brand's primary expressive register, capped at one word per headline maximum. The constraint is enforced in voice rules (typography.rules) and in the .impeccable.md file. The brand chose IvyOra Display specifically for its expressive italic; refusing to use it would defeat the type-system rationale."
+      }
+    ],
+    "off_toolbox_moves": [
+      "CSS-named `green` (#008000) as brand anchor — knowingly unfashionable in 2026; most design-aware brands flee primary CSS keywords",
+      "Pale cool stone (#EEF0EC) ground rather than the cream-family default — designer explicitly rejected cream/vellum/oatmeal/kami/parchment",
+      "Period-as-Canopy-disc wordmark motif — typographic punctuation as brand mark, not a separate icon system",
+      "'Reading among trees' photography brief — concrete subject matter (canopy, bark, leaf-shadow, river-surface, fog) rather than the assistant's default editorial-still-life archetype",
+      "Personal-publication brand model — single-author voice with low cadence and high signal density, not a content-farm magazine model"
+    ],
+    "references_used": [
+      {
+        "source": "https://www.commarts.com/",
+        "kind": "marketing-site",
+        "trends_extracted": [
+          "Greta Sans Compressed all-caps editorial wordmark",
+          "Tight 1.0 leading on display headlines",
+          "Flat black-bordered CTA rectangles, no border-radius",
+          "Image-grid dense layout"
+        ],
+        "trend_tags": {
+          "Greta Sans Compressed all-caps editorial wordmark": "off-toolbox",
+          "Tight 1.0 leading on display headlines": "off-toolbox",
+          "Flat black-bordered CTA rectangles, no border-radius": "off-toolbox",
+          "Image-grid dense layout": "off-toolbox"
+        }
+      },
+      {
+        "source": "https://mindsparklemag.com/",
+        "kind": "marketing-site",
+        "trends_extracted": [
+          "Brockmann Medium 64-71px display headlines",
+          "Pure pill buttons, border-radius 48",
+          "Off-white surface (#F7F7F7) with ink (#1D1D1D) and acid yellow-green accent (#F5FF95)",
+          "Photography-first hierarchy with generous whitespace"
+        ],
+        "trend_tags": {
+          "Brockmann Medium 64-71px display headlines": "off-toolbox",
+          "Pure pill buttons, border-radius 48": "in-toolbox",
+          "Off-white surface (#F7F7F7) with ink (#1D1D1D) and acid yellow-green accent (#F5FF95)": "off-toolbox",
+          "Photography-first hierarchy with generous whitespace": "off-toolbox"
+        }
+      }
+    ],
+    "divergence_warning": false
+  },
+
+  "name": "Experience Managed",
+  "philosophy": "A working publication on content management — Adobe Experience Manager and Edge Delivery in particular — written by an Adobe employee with an independent voice. Pieces exist because there's something the writer wanted in writing. Loyal to humans making things, AI-assisted included.",
+
+  "logo": {
+    "path": "stardust/assets/logo.svg",
+    "format": "svg",
+    "source": "synthesized-placeholder",
+    "variants": [],
+    "clearSpace": "Maintain clear space equal to the height of the trailing period-disc on all sides of the wordmark.",
+    "donts": [
+      "Don't recolor the disc to anything other than Canopy (#008000).",
+      "Don't bold the wordmark above 400 weight — the lightness is the point.",
+      "Don't set the wordmark in any face other than IvyOra Display.",
+      "Don't add a tagline or descriptor inside the logo lockup."
+    ]
+  },
+
+  "colors": {
+    "primary": [
+      {
+        "name": "Stone",
+        "hex": "#EEF0EC",
+        "pantone": null,
+        "role": "Stone",
+        "use": "primary surface, page ground, hero behind photography. Pale cool lichen with the faintest green undertone — verified non-cream (R−B = 2)."
+      },
+      {
+        "name": "Loam",
+        "hex": "#E2E6DF",
+        "pantone": null,
+        "role": "Loam",
+        "use": "secondary surface, code-block ground, sidebar fills, tonal blocks within long reads."
+      },
+      {
+        "name": "Canopy",
+        "hex": "#008000",
+        "pantone": null,
+        "role": "Canopy",
+        "use": "brand anchor, links, wordmark disc, eyebrow accents, code-block left rule, hover under-line."
+      },
+      {
+        "name": "Pine",
+        "hex": "#0A4F1C",
+        "pantone": null,
+        "role": "Pine",
+        "use": "hover state for Canopy, deep emphasis, code keyword color, high-contrast small text on Stone."
+      },
+      {
+        "name": "Trunk",
+        "hex": "#1A1A1A",
+        "pantone": null,
+        "role": "Trunk",
+        "use": "body text, headings, CTA fill, image captions. Near-black with a hair of warmth so it sits with Stone rather than pure ink."
+      }
+    ],
+    "secondary": [],
+    "web": [
+      { "name": "Canopy", "hex": "#008000", "role": "Canopy" },
+      { "name": "Pine", "hex": "#0A4F1C", "role": "Pine" }
+    ],
+    "gradients": []
+  },
+
+  "componentStyle": {
+    "borderRadius": {
+      "default": "4px",
+      "usage": "Soft-edge default. Hard zero on code blocks, image edges, and full-bleed surfaces where editorial confidence calls for it. Never pillowy — pill radii (≥24px) are explicitly out."
+    },
+    "maxWidth": "1280px",
+    "pagePadding": "32px",
+    "navbarHeight": "72px",
+    "buttons": {
+      "patterns": [
+        {
+          "name": "Inked (primary)",
+          "style": "background Trunk #1A1A1A, color Stone #EEF0EC, border-radius 4px, padding 14px 28px, font IvyEpic Variable Medium 500, no text-transform, letter-spacing 0",
+          "example": "Read the piece"
+        },
+        {
+          "name": "Ghost (secondary)",
+          "style": "background transparent on Stone, color Trunk #1A1A1A, 1px Trunk border, border-radius 4px, padding 14px 28px, font IvyEpic Variable Medium 500",
+          "example": "More field notes"
+        },
+        {
+          "name": "Underline (tertiary)",
+          "style": "text-only, color Trunk, hover color Pine, underline 1px Canopy with 4px text-underline-offset, font IvyEpic Variable Regular 400",
+          "example": "Subscribe by email"
+        }
+      ],
+      "dualCTA": "Avoid the SaaS-default solid-primary + outlined-secondary hero pair. When two CTAs sit together, lead with one Inked and one Underline — never two equally-weighted buttons."
+    }
+  },
+
+  "motifs": [
+    {
+      "name": "Period disc",
+      "description": "The trailing period in the wordmark is rendered as a small Canopy disc, ~14% of the cap height. At small sizes (favicon, social avatar, comment-stamp) the disc stands alone as the brand's smallest mark.",
+      "usage": "Always green. May appear at the end of section headlines as a quiet brand-rhyme — at most once per page."
+    },
+    {
+      "name": "Atmospheric photography ground",
+      "description": "Big abstract forest imagery sits behind the article hero — canopy, leaf-shadow, bark, river-surface, fog. Out-of-focus / motion-blurred / macro. Never sharp documentary or stock.",
+      "usage": "Every article carries one. Photography is the production value — the chrome is restrained so the image holds."
+    },
+    {
+      "name": "Fine Canopy rule",
+      "description": "1px Canopy line as section divider. Replaces the typical heavy editorial rule. Very thin, very specific — earns its presence by being rare.",
+      "usage": "Major section breaks within an article. Never as ornament, never along page edges, never doubled."
+    },
+    {
+      "name": "Editorial numeral",
+      "description": "Section numbers set in IvyOra Display 100wt (Thin), very large (96–120px), Canopy color, alongside the section title. A nod to commarts editorial confidence.",
+      "usage": "Long-form articles only. Skip on Field notes and Code patterns."
+    },
+    {
+      "name": "Mono eyebrow",
+      "description": "Content-kind labels in JetBrains Mono Regular 11px, small caps, letter-spacing 0.18em, Pine color. Anchors technical content; gives Code patterns its quiet header voice.",
+      "usage": "Above every section title and above the main hero headline as a kicker."
+    }
+  ],
+
+  "typography": {
+    "heading": {
+      "family": "IvyOra Display",
+      "cssFamily": "ivyora-display",
+      "weights": ["100", "300", "400", "500", "600"],
+      "lineHeight": 0.96,
+      "letterSpacing": "-0.02em",
+      "usage": "All display and section headings. IvyOra Display is not variable — each weight is a discrete face. Weight floor for any heading ~24–48px (h2/h3-scale) is 400; never thinner at that scale. Weight 100 (Thin) reserved for very large display only (section numerals ≥96px, masthead). 400–500 for headlines. 600 for emphasis. Ligatures on (calt + liga + dlig)."
+    },
+    "subheading": {
+      "family": "IvyOra Display",
+      "weight": "300 (italic permitted; one word max per subhead)",
+      "usage": "Standfirst / dek under hero headline. Also article subheads inside long reads."
+    },
+    "body": {
+      "family": "IvyEpic Variable",
+      "cssFamily": "ivyepic-variable",
+      "weight": "Regular 400 (Medium 500 for inline emphasis; 700 for strong)",
+      "opacity": null,
+      "usage": "All body copy, captions, UI text. 18px / line-height 1.6 / max-width 62ch on long-form. Body ink is Trunk at full opacity — readability over mood. Adobe Fonts kit `uez3qis` supplies the live family `ivyepic-variable` via the wght axis (400–700) plus matching italic; CSS stack keeps Manrope as a defense-in-depth fallback only."
+    },
+    "accent": {
+      "family": "IvyOra Display Italic",
+      "weight": "300–400",
+      "usage": "Single-word italic accent inside IvyOra headlines. ONE word per headline maximum, on positioning words only (verbs of stance, adverbs of register). Never on nouns of subject."
+    },
+    "eyebrow": {
+      "family": "JetBrains Mono",
+      "weight": "Regular 400",
+      "transform": "uppercase / small-caps with letter-spacing 0.18em",
+      "usage": "Content-kind labels (FIELD NOTES · OPINION · CODE PATTERNS), section eyebrows, metadata strips. 11–13px, Pine color. The mono is brand-system, not just code-block."
+    },
+    "button": {
+      "family": "IvyEpic Variable",
+      "weight": "Medium 500",
+      "usage": "Button text, form labels, navigation. Sentence case — never all-caps."
+    },
+    "rules": [
+      "Headlines may use IvyOra Display italic for one word maximum, applied only to positioning words.",
+      "Body line-height is 1.6 on long-form. Tighter is illegible at 18px on Stone.",
+      "Code blocks use JetBrains Mono Regular at 14px / line-height 1.7 / Loam ground / 3px Canopy left rule / no border-radius.",
+      "Eyebrows are JetBrains Mono small caps, Pine color, never Canopy (Pine reads quieter at 11px).",
+      "Pull-quotes are IvyOra Display 300wt italic at 28–32px on a Canopy left rule.",
+      "Em-dashes welcome; semicolons earned. Parentheses sparingly — they soften authority.",
+      "Never set body in italic, never set headlines in regular IvyEpic, never set code outside the mono."
+    ]
+  },
+
+  "photography": {
+    "style": "Big, abstract, atmospheric. Forest-coded — canopy, leaf-shadow, bark, river-surface, fog through trees, foliage abstracts, stone, lichen. Sits BEHIND content as a tonal layer, not above as illustration. Out-of-focus / motion-blurred / macro. Every article gets a hero image — the photography is the production value.",
+    "rules": [
+      "Subject DNA: canopy, leaf-shadow, bark, foliage, river surface, fog through trees, stone, lichen, moss, rain on leaves.",
+      "Composition: out-of-focus, motion-blurred, or macro. Never sharp wide-shot documentary.",
+      "Color cast: green / earth / shadow. Cool, never warm-orange sunset filter.",
+      "The hero photo runs full-bleed as a hero ground; type sits over it with a Stone or Trunk overlay at 80–92% opacity.",
+      "Photo credit set in JetBrains Mono Regular 11px, Pine color, bottom-right of the hero block."
+    ],
+    "donts": [
+      "No stock business imagery (handshakes, laptops, glass-walled meeting rooms).",
+      "No isometric SaaS illustrations.",
+      "No AI-generated faces (or AI-generated photos that read as AI-generated — if you use AI, the seam should not show).",
+      "No screenshots-as-hero. Screenshots are figures, not heroes.",
+      "No warm-orange / sunset / golden-hour grade. Cool green/earth only.",
+      "No people-of-the-platform smiling at the camera. Atmospheric, not testimonial."
+    ],
+    "social": "Square crops use the same atmospheric photography with the wordmark + period disc bottom-left at 64px height. Twitter/X and LinkedIn cards show the photo with the article title set in IvyOra Display 300wt over a Stone scrim at the top-third. Never overlay full-bleed text without a scrim."
+  },
+
+  "voice": {
+    "character": "A working CMS practitioner who writes when they have something they actually want in writing. Independent voice from inside Adobe; advocate for humans making things, AI-assisted included. Authoritative without being closed, curious without being naive.",
+    "traits": [
+      "Authoritative-yet-curious",
+      "Plainspoken",
+      "Opinionated",
+      "Crafted"
+    ],
+    "antiTraits": [
+      "Vendor-neutral / stenographic",
+      "Sycophantic to the platform",
+      "Anti-AI / gatekeeping toward AI-assisted creators",
+      "Clickbait / listicle-bait",
+      "Adobe-corporate-comms register"
+    ],
+    "examples": {
+      "do": [
+        {
+          "text": "The seven deadly sins of Edge Delivery development.",
+          "context": "Designer-provided. Punchy, opinionated, list-as-position not list-as-bait. Names the platform plainly."
+        },
+        {
+          "text": "The tension between brand equity and making money.",
+          "context": "Designer-provided. Holds a contradiction without resolving it; trusts the reader to do the work."
+        },
+        {
+          "text": "Claude can be shockingly good at polish if you let it.",
+          "context": "Designer-provided. Surprised observer. 'If you let it' is the editorial move — credits the human and the tool together."
+        },
+        {
+          "text": "Most platform writeups read like marketing collateral that someone forgot to redact. The honest version is messier.",
+          "context": "Lede that names the genre's failure mode and stakes the writer's position before the first paragraph break."
+        },
+        {
+          "text": "There is a moment, usually around week three of a project, when someone proposes pulling in a framework to stop reinventing the wheel. Half the time the wheel is already rolling.",
+          "context": "Field-notes voice. Specific timing, specific scene, opinionated punchline."
+        }
+      ],
+      "dont": [
+        {
+          "text": "Unleash the power of Edge Delivery to supercharge your content velocity!",
+          "context": "Marketing-collateral voice. 'Unleash', 'supercharge', exclamation point, abstract benefit-promise."
+        },
+        {
+          "text": "In this comprehensive guide, we'll walk through everything you need to know about AEM.",
+          "context": "Generic guide-blog opening. 'Comprehensive', 'everything you need', no position. Reader has no reason to keep reading."
+        },
+        {
+          "text": "AI is killing creativity. Real designers don't use Claude.",
+          "context": "Anti-AI gatekeeping. Violates the brand's stated loyalty to humans making things, including those using AI."
+        }
+      ]
+    },
+    "rules": [
+      "Pieces exist because there's something the writer wants in writing. Never to fill a queue.",
+      "Take a position in the lede or kill the piece.",
+      "Never write 'leverage'. Never write 'unleash'. Never write 'comprehensive guide'.",
+      "No exclamation points except in dialogue or when reporting someone else's exclaim.",
+      "Em-dashes welcome; semicolons earned.",
+      "AI-assisted craft is craft. Treat AI as a tool, name it specifically (Claude, Codex, etc.) when it's load-bearing in the piece.",
+      "Critical of Adobe is fine. Hostile to Adobe is not. The boundary is 'things that won't get me fired.'"
+    ]
+  },
+
+  "tone": {
+    "description": "Tone scales by pillar. Opinion runs longer, more crafted, willing to take time. Field notes are tight, observational, lower-cadence. Code patterns are utilitarian — the writing serves the technique.",
+    "writingGoals": [
+      {
+        "goal": "To position",
+        "description": "Opinion pieces stake a claim. The first paragraph names the position; the rest earns it. Length: 1200–2400 words."
+      },
+      {
+        "goal": "To equip",
+        "description": "Code patterns hand the reader a working technique. Code is the spine; prose connects the moves. Length: 600–1200 words."
+      },
+      {
+        "goal": "To witness",
+        "description": "Field notes record what the writer saw — a specific project, a specific bug, a specific surprise. No conclusion required. Length: 300–800 words."
+      }
+    ],
+    "cleverVsClear": {
+      "clever": "The opening line of an Opinion piece. The closing sentence of a Field note. One section title per article, maximum.",
+      "clear": "Default register. Always for code patterns. Always for any sentence inside a long-form that introduces a new term."
+    }
+  },
+
+  "contentPillars": [
+    {
+      "name": "Opinion",
+      "description": "Long-form positions on industry direction, platform decisions, the state of CMS work. The thought-leadership read for C-suite; the position-piece for engineers who want a take."
+    },
+    {
+      "name": "Code patterns",
+      "description": "Short, reusable techniques for AEM and Edge Delivery — copy-paste-friendly, no framework required. Excellent code typography; layout gets out of the way."
+    },
+    {
+      "name": "Field notes",
+      "description": "Short observations from real client work. A logbook register: specific, dated, lower stakes. The pillar that builds the writer's credibility through accumulation."
+    }
+  ],
+
+  "personas": [],
+
+  "spacing": {
+    "scale": [
+      { "name": "XS",  "value": "4px" },
+      { "name": "S",   "value": "8px" },
+      { "name": "M",   "value": "16px" },
+      { "name": "L",   "value": "24px" },
+      { "name": "XL",  "value": "40px" },
+      { "name": "2XL", "value": "64px" },
+      { "name": "3XL", "value": "96px" },
+      { "name": "4XL", "value": "128px" }
+    ],
+    "borderRadius": [
+      { "name": "Hard",   "value": "0px" },
+      { "name": "Default","value": "4px" },
+      { "name": "Disc",   "value": "50%" }
+    ]
+  }
+}

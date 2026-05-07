@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Experience Managed · Type Pairings v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200..900,0..100&family=Newsreader:opsz,wght@6..72,200..800&family=Italiana&family=Manrope:wght@200..800&family=Mulish:wght@300..900&family=Sora:wght@200..800&family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: rgba(26,26,26,0.72);
+    --ink-faint: rgba(26,26,26,0.50);
+    --ink-line: rgba(26,26,26,0.14);
+    --cream: #F4ECDB;
+    --cream-deep: #EAE0CB;
+    --green: #008000;
+    --green-deep: #0a5a1f;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  .top {
+    padding: 64px 80px 28px;
+    border-bottom: 1px solid var(--ink-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 48px;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 400;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--green);
+  }
+  .wordmark em { font-style: italic; color: var(--ink); }
+  .deck {
+    max-width: 540px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .deck strong { color: var(--ink); }
+  .legend {
+    padding: 22px 80px;
+    border-bottom: 1px solid var(--ink-line);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .legend strong { color: var(--ink); font-weight: 600; }
+  .card {
+    border-bottom: 1px solid var(--ink-line);
+    padding: 56px 80px 64px;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 32px;
+  }
+  .card-num {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 250;
+    font-size: 96px;
+    line-height: 0.85;
+    color: var(--green);
+    letter-spacing: -0.05em;
+  }
+  .card-recommended .card-num::after {
+    content: "★ recommended";
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--green-deep);
+    margin-top: 14px;
+    font-weight: 600;
+  }
+  .meta {
+    margin: 0 0 28px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+  }
+  .meta .role { color: var(--ink); font-weight: 700; }
+  .pairing {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 56px;
+    align-items: start;
+  }
+  .specimens .display {
+    margin: 0 0 32px;
+    font-size: 92px;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .specimens .display em {
+    color: var(--green);
+    font-style: italic;
+  }
+  .specimens .kicker {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+  }
+  .specimens .body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin: 0 0 28px;
+    color: var(--ink);
+  }
+  .specimens .body strong { font-weight: 700; color: var(--green-deep); }
+  .specimens pre {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 22px 26px;
+    background: var(--cream-deep);
+    border-left: 3px solid var(--green);
+    overflow-x: auto;
+    color: var(--ink);
+  }
+  .specimens pre .kw { color: var(--green-deep); font-weight: 500; }
+  .specimens pre .str { color: #a14b00; }
+  .specimens pre .com { color: var(--ink-faint); font-style: italic; }
+  .stack {
+    border-left: 1px solid var(--ink-line);
+    padding-left: 28px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .stack dt {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 18px;
+  }
+  .stack dt:first-child { margin-top: 0; }
+  .stack dd {
+    margin: 4px 0 0;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .stack dd .stand {
+    display: block;
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .stack dd a { color: var(--green-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  /* === TRIO 1: Caponi Display Thin / Avenir Next / JetBrains Mono ===
+       Stand-ins: Fraunces (max SOFT, thin weight) / Manrope / JetBrains Mono */
+  .t1 .display {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 280;
+  }
+  .t1 .body { font-family: 'Manrope', sans-serif; font-weight: 400; }
+  .t1 pre { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+
+  /* === TRIO 2: Reckless Light / Söhne Buch / Söhne Mono ===
+       Stand-ins: Newsreader Light / Manrope / JetBrains Mono */
+  .t2 .display {
+    font-family: 'Newsreader', serif;
+    font-variation-settings: "opsz" 72;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+  }
+  .t2 .body { font-family: 'Manrope', sans-serif; font-weight: 400; }
+  .t2 pre { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+
+  /* === TRIO 3: Migra Light Italic display / Object Sans / JetBrains Mono ===
+       Stand-ins: Italiana (single thin weight, Migra-coded) / Sora / Fira Code */
+  .t3 .display {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.0;
+  }
+  .t3 .body { font-family: 'Sora', sans-serif; font-weight: 400; }
+  .t3 pre { font-family: 'Fira Code', monospace; font-weight: 400; }
+
+  .footer {
+    padding: 48px 80px 80px;
+    background: var(--cream-deep);
+    border-top: 1px solid var(--ink-line);
+  }
+  .footer h2 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 380;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .footer h2 em { color: var(--green); font-style: italic; }
+  .footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 70ch;
+    margin: 0 0 12px;
+  }
+  .footer .vote {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--green-deep);
+    margin-top: 16px;
+  }
+  @media (max-width: 1100px) {
+    .pairing { grid-template-columns: 1fr; gap: 28px; }
+    .stack { border-left: 0; border-top: 1px solid var(--ink-line); padding-left: 0; padding-top: 24px; }
+  }
+  @media (max-width: 720px) {
+    .top, .legend, .card, .footer { padding-left: 28px; padding-right: 28px; }
+    .card { grid-template-columns: 1fr; }
+    .specimens .display { font-size: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wordmark">Experience Managed<em>.</em></div>
+  <p class="deck"><strong>v2 · softer serifs, all on Adobe Fonts.</strong> No GT family. Each display is thin, low-angle, more drawn than razored. Pick 1, 2, or 3 — or tell me to swap a slot.</p>
+</header>
+
+<div class="legend">
+  <span><strong>What's authentic:</strong> JetBrains Mono renders as itself everywhere. The display serifs and geometric sans are previewed with close Google-Fonts cousins; once you add the listed Adobe Fonts to a kit and send the URL, the real fonts replace these.</span>
+</div>
+
+<!-- TRIO 1 -->
+<section class="card t1 card-recommended">
+  <div class="card-num">1</div>
+  <div>
+    <p class="meta"><span class="role">Caponi Display Thin · Avenir Next · JetBrains Mono</span> <span style="color:var(--ink-faint)"> &nbsp;·&nbsp; organic editorial, "reading among trees"</span></p>
+    <div class="pairing">
+      <div class="specimens">
+        <div class="kicker">Field notes</div>
+        <h2 class="display">A CMS that <em>doesn't</em> apologize for being good.</h2>
+        <p class="body">Most platform writeups read like marketing collateral that someone forgot to redact. The honest version is messier. <strong>Edge Delivery rewrites the asset pipeline</strong>, which means rewriting the assumptions you carried in from AEM as a Cloud Service. This piece works through what actually changes — caching, image transforms, the build itself — and what doesn't.</p>
+<pre><span class="com">// resolves nearest matching breakpoint, falls back to the original</span>
+<span class="kw">function</span> pickRendition(asset, viewport) {
+  <span class="kw">const</span> candidates = asset.renditions
+    .filter((r) =&gt; r.format === <span class="str">'webp'</span>)
+    .sort((a, b) =&gt; a.width - b.width);
+
+  <span class="kw">return</span> candidates.find((r) =&gt; r.width &gt;= viewport)
+    ?? candidates.at(-1)
+    ?? asset.original;
+}</pre>
+      </div>
+      <dl class="stack">
+        <dt>Display</dt>
+        <dd>Caponi Display Thin<span class="stand">TypeTogether · <a href="https://fonts.adobe.com/fonts/caponi" target="_blank">Adobe Fonts</a> · preview: Fraunces SOFT 100 wght 280</span></dd>
+        <dt>Body</dt>
+        <dd>Avenir Next Regular<span class="stand">Adobe Originals · <a href="https://fonts.adobe.com/fonts/avenir-next" target="_blank">Adobe Fonts</a> · preview: Manrope</span></dd>
+        <dt>Code</dt>
+        <dd>JetBrains Mono<span class="stand">authentic · <a href="https://fonts.adobe.com/fonts/jetbrains-mono" target="_blank">Adobe Fonts</a></span></dd>
+        <dt>Mood</dt>
+        <dd>Soft, drawn, calm. Almost botanical. The display has thin organic curves — no scalpel edges.</dd>
+        <dt>Best for</dt>
+        <dd>Long-form Opinion pieces with hero photography behind the type.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- TRIO 2 -->
+<section class="card t2">
+  <div class="card-num">2</div>
+  <div>
+    <p class="meta"><span class="role">Reckless Light · Söhne Buch · Söhne Mono</span> <span style="color:var(--ink-faint)"> &nbsp;·&nbsp; modern editorial, low-contrast, contemporary</span></p>
+    <div class="pairing">
+      <div class="specimens">
+        <div class="kicker">Opinion</div>
+        <h2 class="display">The platform you ship is the <em>essay</em> you wrote.</h2>
+        <p class="body">The shape of a CMS is an argument about what content is for. AEM's component model says content is structured. EDS's document-authoring says content is intent. <strong>Both can be right</strong> — and a team that picks one without understanding the other is just betting on a vendor and hoping.</p>
+<pre><span class="com">// EDS treats the document as the source of truth</span>
+<span class="kw">export default</span> <span class="kw">function</span> decorate(block) {
+  <span class="kw">const</span> rows = [...block.children];
+  rows.forEach((row, i) =&gt; {
+    row.dataset.index = i;
+    row.classList.add(<span class="str">'em-row'</span>);
+  });
+  block.dataset.ready = <span class="str">'true'</span>;
+}</pre>
+      </div>
+      <dl class="stack">
+        <dt>Display</dt>
+        <dd>Reckless Light<span class="stand">Displaay · <a href="https://fonts.adobe.com/fonts/reckless" target="_blank">Adobe Fonts</a> · preview: Newsreader Light</span></dd>
+        <dt>Body</dt>
+        <dd>Söhne Buch<span class="stand">Klim · <a href="https://fonts.adobe.com/fonts/sohne" target="_blank">Adobe Fonts</a> · preview: Manrope</span></dd>
+        <dt>Code</dt>
+        <dd>Söhne Mono Buch<span class="stand">Klim · <a href="https://fonts.adobe.com/fonts/sohne-mono" target="_blank">Adobe Fonts</a> · preview: JetBrains Mono</span></dd>
+        <dt>Mood</dt>
+        <dd>Quietly modern. Reckless is humanist serif with very low contrast — feels current, not vintage. Klim's Söhne family unifies body + code as one system.</dd>
+        <dt>Best for</dt>
+        <dd>Code-heavy posts where body and code share visual DNA.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- TRIO 3 -->
+<section class="card t3">
+  <div class="card-num">3</div>
+  <div>
+    <p class="meta"><span class="role">Migra Light · Object Sans · JetBrains Mono</span> <span style="color:var(--ink-faint)"> &nbsp;·&nbsp; soft Didone display, fashion-magazine elegance</span></p>
+    <div class="pairing">
+      <div class="specimens">
+        <div class="kicker">Code patterns</div>
+        <h2 class="display">Stop reaching for <em>the framework.</em></h2>
+        <p class="body">There is a moment, usually around week three of a project, when someone proposes pulling in a framework to "stop reinventing the wheel." Half the time the wheel is already rolling. <strong>This is a pattern, not a polemic</strong> — three places in EDS where a 40-line vanilla decorator is the right answer.</p>
+<pre><span class="com">// 40 lines &gt; one more dependency</span>
+<span class="kw">const</span> intersect = <span class="kw">new</span> IntersectionObserver((entries) =&gt; {
+  entries.forEach((e) =&gt; {
+    <span class="kw">if</span> (!e.isIntersecting) <span class="kw">return</span>;
+    e.target.classList.add(<span class="str">'em-in-view'</span>);
+    intersect.unobserve(e.target);
+  });
+}, { rootMargin: <span class="str">'200px'</span> });</pre>
+      </div>
+      <dl class="stack">
+        <dt>Display</dt>
+        <dd>Migra Light<span class="stand">Pangram Pangram · <a href="https://fonts.adobe.com/fonts/migra" target="_blank">Adobe Fonts</a> · preview: Italiana</span></dd>
+        <dt>Body</dt>
+        <dd>Object Sans Regular<span class="stand">Pangram Pangram · <a href="https://fonts.adobe.com/fonts/object-sans" target="_blank">Adobe Fonts</a> · preview: Sora</span></dd>
+        <dt>Code</dt>
+        <dd>JetBrains Mono<span class="stand">authentic · <a href="https://fonts.adobe.com/fonts/jetbrains-mono" target="_blank">Adobe Fonts</a></span></dd>
+        <dt>Mood</dt>
+        <dd>Soft Didone with curling terminals — more Italian editorial than New York editorial. Object Sans is geometric and unflashy; Migra carries all the personality.</dd>
+        <dt>Best for</dt>
+        <dd>Posts where the headline IS the design — large, romantic, photography-led covers.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <h2>Pick a trio. <em>Then we move.</em></h2>
+  <p>Reply with <strong>1</strong>, <strong>2</strong>, or <strong>3</strong> — or swap a slot ("trio 1 but Söhne body", "trio 2 but Migra display"). Once you add the chosen Adobe Fonts to a web project and send the kit URL, every preview here re-renders with your real licensed fonts and we move on to the palette picker.</p>
+  <p class="vote">$ pick &lt;1 | 2 | 3 | swap [slot] for [font]&gt;</p>
+</footer>
+
+</body>
+</html>

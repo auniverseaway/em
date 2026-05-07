@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-28
+  variant_direction: single — letter + colophon hybrid, contemplative
+  imagery_mode: placeholder
+  synthesized_inputs:
+    - body copy §01–§03: assistant-drafted in brand voice; designer to rewrite at publish time
+    - contact handles: placeholders (chris@experiencemanaged.com, @chrismillar) — replace before launch
+  note: about page prototype.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Experience Managed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/uez3qis.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --stone: #EEF0EC; --loam: #E2E6DF; --canopy: #008000;
+    --pine: #0A4F1C; --trunk: #1A1A1A;
+    --line: rgba(26,26,26,0.14);
+    --ink-soft: rgba(26,26,26,0.72);
+    --ink-faint: rgba(26,26,26,0.48);
+    --font-display: 'ivyora-display', Georgia, 'Times New Roman', serif;
+    --font-body: 'ivyepic-variable', 'Manrope', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --type-display-xl: clamp(72px, 10vw, 144px);
+    --type-h1: clamp(36px, 4.5vw, 64px);
+    --type-h2: 44px; --type-h3: 28px; --type-h4: 22px;
+    --type-body-lg: 20px; --type-body: 18px; --type-small: 14px;
+    --type-eyebrow: 11px;
+    --space-xs: 4px; --space-s: 8px; --space-m: 16px; --space-l: 24px;
+    --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 128px;
+    --max-width: 1280px; --reading-width: 64ch;
+    --page-padding: 40px; --navbar-height: 72px;
+    --radius-default: 4px; --radius-disc: 50%;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--stone); color: var(--trunk);
+    font-family: var(--font-body); font-size: var(--type-body);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+
+  /* CHROME */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(238,240,236,0.94);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 var(--page-padding);
+  }
+  header.site-nav .nav-inner {
+    max-width: var(--max-width); margin: 0 auto;
+    padding: 18px 0;
+    display: flex; align-items: center; gap: 28px; height: var(--navbar-height);
+  }
+  .wordmark-link {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px; color: var(--trunk); text-decoration: none;
+    letter-spacing: -0.015em; line-height: 1; margin-right: auto;
+  }
+  .wordmark-link .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 6%; margin-left: 0.08em;
+  }
+  .nav-link {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--pine); text-decoration: none;
+    position: relative; padding: 8px 0;
+    transition: color 220ms ease;
+  }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: 2px;
+    height: 1px; background: var(--canopy);
+    transition: right 280ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .nav-link:hover, .nav-link.active { color: var(--canopy); }
+  .nav-link:hover::after, .nav-link.active::after { right: 0; }
+  .social-lockup {
+    display: flex; gap: 14px; margin-left: 8px;
+    padding-left: 24px; border-left: 1px solid var(--line);
+    align-items: center; height: 28px;
+  }
+  .social-lockup a {
+    color: var(--pine);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px;
+    transition: color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .social-lockup a:hover { color: var(--canopy); transform: translateY(-1px); }
+  .social-lockup svg { width: 100%; height: 100%; fill: currentColor; }
+
+  footer.site-footer {
+    background: var(--trunk); color: var(--stone);
+    padding: var(--space-3xl) var(--page-padding) var(--space-xl);
+    margin-top: var(--space-4xl);
+  }
+  footer.site-footer .inner {
+    max-width: var(--max-width); margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl);
+  }
+  footer.site-footer .end {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 56px; line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 var(--space-l); color: var(--stone);
+  }
+  footer.site-footer .end .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 8%; margin-left: 0.06em;
+  }
+  footer.site-footer .deck {
+    font-size: var(--type-small); line-height: 1.6;
+    color: rgba(238,240,236,0.7); max-width: 38ch;
+  }
+  footer.site-footer h5 {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--canopy);
+    font-weight: 400; margin: 0 0 var(--space-m);
+  }
+  footer.site-footer ul { list-style: none; padding: 0; margin: 0; }
+  footer.site-footer ul li { padding: 4px 0; font-size: var(--type-small); }
+  footer.site-footer ul li a { color: var(--stone); text-decoration: none; transition: color 220ms ease; }
+  footer.site-footer ul li a:hover { color: var(--canopy); }
+  footer.site-footer .meta-row {
+    grid-column: 1 / -1; margin-top: var(--space-2xl);
+    padding-top: var(--space-l); border-top: 1px solid rgba(238,240,236,0.14);
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(238,240,236,0.5);
+  }
+  footer.site-footer .social-lockup { border-left: 0; padding-left: 0; margin: 0; }
+  footer.site-footer .social-lockup a { color: rgba(238,240,236,0.7); }
+  footer.site-footer .social-lockup a:hover { color: var(--canopy); }
+
+  /* PRIMITIVES */
+  .eyebrow {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--pine); margin: 0;
+  }
+  .btn {
+    display: inline-block; font-family: var(--font-body);
+    font-weight: 500; font-size: 15px; line-height: 1;
+    text-decoration: none; padding: 14px 28px;
+    border-radius: var(--radius-default); border: 0; cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 380ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .btn-link {
+    background: transparent; color: var(--trunk);
+    text-decoration: underline; text-decoration-color: var(--canopy);
+    text-decoration-thickness: 1px; text-underline-offset: 4px;
+    padding: 14px 0;
+  }
+  .btn-link:hover { color: var(--pine); }
+
+  /* ABOUT HERO — quieter, macro-feel */
+  .about-hero {
+    position: relative;
+    min-height: 64vh;
+    display: flex; align-items: flex-end;
+    padding: var(--space-3xl) var(--page-padding) var(--space-2xl);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .about-hero .stage {
+    position: absolute; inset: 0;
+    /* macro: lichen on stone, dew on leaf — close, soft */
+    background:
+      radial-gradient(ellipse 50% 40% at 35% 50%, #5a6d4e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 70% 65%, #3a4d33 0%, transparent 60%),
+      radial-gradient(ellipse 80% 70% at 50% 30%, #4a5d3f 0%, transparent 50%),
+      linear-gradient(135deg, #2c3a26 0%, #3d4d36 60%, #4a5a3f 100%);
+    background-size: 130% 130%;
+  }
+  .about-hero .stage::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08), transparent 35%),
+      radial-gradient(circle at 70% 70%, rgba(0,0,0,0.25), transparent 50%);
+    filter: blur(36px);
+  }
+  .about-hero .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(26,26,26,0.35) 100%);
+  }
+  .about-hero .inner {
+    position: relative; z-index: 2;
+    max-width: var(--max-width); margin: 0 auto; width: 100%;
+  }
+  .about-hero .pad {
+    background: rgba(238,240,236,0.95);
+    padding: var(--space-2xl);
+    max-width: 720px;
+    border-left: 3px solid var(--canopy);
+  }
+  .about-hero .pad .eyebrow { margin-bottom: var(--space-m); }
+  .about-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 var(--space-l);
+    color: var(--trunk);
+  }
+  .about-hero h1 em { color: var(--canopy); font-style: italic; }
+  .about-hero .dek {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px; line-height: 1.4;
+    color: var(--ink-soft);
+    margin: 0; max-width: 56ch;
+  }
+
+  /* SECTIONS */
+  section.about-section {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.about-section .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+  }
+  section.about-section .head {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: var(--space-l);
+    align-items: baseline;
+    margin-bottom: var(--space-2xl);
+  }
+  section.about-section .num {
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 96px; line-height: 0.85;
+    color: var(--canopy);
+    letter-spacing: -0.05em;
+    margin: 0;
+  }
+  section.about-section h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--trunk);
+  }
+  section.about-section h2 em { color: var(--canopy); font-style: italic; }
+  section.about-section p {
+    font-size: var(--type-body); line-height: 1.65;
+    color: var(--trunk); margin: 0 0 var(--space-l);
+  }
+  section.about-section p em { color: var(--pine); font-style: italic; }
+  section.about-section p strong { color: var(--pine); font-weight: 600; }
+  section.about-section p:last-child { margin-bottom: 0; }
+
+  /* COLOPHON */
+  section.colophon {
+    padding: var(--space-4xl) var(--page-padding);
+    background: var(--loam);
+    border-bottom: 1px solid var(--line);
+  }
+  section.colophon .inner {
+    max-width: var(--max-width); margin: 0 auto;
+  }
+  section.colophon .head {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: var(--space-l); align-items: baseline;
+    margin-bottom: var(--space-2xl);
+  }
+  section.colophon .num {
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 96px; line-height: 0.85;
+    color: var(--canopy); letter-spacing: -0.05em;
+    margin: 0;
+  }
+  section.colophon h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0; color: var(--trunk);
+  }
+  .colophon-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl) var(--space-3xl);
+  }
+  .colo-item dt {
+    font-family: var(--font-mono); font-size: var(--type-eyebrow);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--pine); margin-bottom: var(--space-s);
+  }
+  .colo-item dd {
+    font-size: var(--type-body); line-height: 1.55;
+    color: var(--trunk); margin: 0;
+  }
+  .colo-item dd .swatch {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; margin-right: 6px; vertical-align: 0;
+  }
+  .colo-item dd code {
+    font-family: var(--font-mono); font-size: 13px;
+    color: var(--pine);
+  }
+
+  /* CONTACT */
+  section.contact {
+    padding: var(--space-4xl) var(--page-padding);
+    border-bottom: 1px solid var(--line);
+  }
+  section.contact .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+  }
+  section.contact .head {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: var(--space-l); align-items: baseline;
+    margin-bottom: var(--space-l);
+  }
+  section.contact .num {
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 96px; line-height: 0.85;
+    color: var(--canopy); letter-spacing: -0.05em; margin: 0;
+  }
+  section.contact h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px; line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0; color: var(--trunk);
+  }
+  section.contact p {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-h3); line-height: 1.4;
+    color: var(--trunk); margin: 0 0 var(--space-l);
+  }
+  section.contact p code {
+    font-family: var(--font-mono);
+    font-size: 0.78em;
+    background: var(--loam);
+    padding: 2px 8px;
+    color: var(--pine);
+  }
+
+  /* END CTA */
+  section.end-cta {
+    padding: var(--space-3xl) var(--page-padding);
+    text-align: center;
+  }
+  section.end-cta .inner {
+    max-width: var(--reading-width); margin: 0 auto;
+  }
+  section.end-cta .signoff {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 56px; line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-l); color: var(--trunk);
+  }
+  section.end-cta .signoff .disc {
+    display: inline-block; width: 0.18em; height: 0.18em;
+    border-radius: 50%; background: var(--canopy);
+    vertical-align: 8%; margin-left: 0.06em;
+  }
+
+  /* MOTION */
+  @keyframes em-breathe {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.06); opacity: 0.92; }
+  }
+  footer .end .disc, section.end-cta .signoff .disc {
+    transform-origin: center;
+    animation: em-breathe 4200ms cubic-bezier(0.45,0,0.55,1) infinite;
+    will-change: transform, opacity;
+  }
+  @keyframes em-drift-slow {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    33%  { transform: translate3d(0.5%, -0.8%, 0) scale(1.02); }
+    66%  { transform: translate3d(-0.6%, 0.4%, 0) scale(1.015); }
+    100% { transform: translate3d(0,0,0) scale(1); }
+  }
+  .about-hero .stage {
+    animation: em-drift-slow 40s ease-in-out infinite;
+    will-change: transform;
+  }
+  section.about-section, section.colophon, section.contact, section.end-cta {
+    opacity: 0; transform: translateY(16px);
+    transition:
+      opacity 720ms cubic-bezier(0.2,0.7,0.2,1),
+      transform 720ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  section.about-section.in-view, section.colophon.in-view, section.contact.in-view, section.end-cta.in-view {
+    opacity: 1; transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-hero .stage, footer .end .disc, section.end-cta .signoff .disc { animation: none !important; }
+    section.about-section, section.colophon, section.contact, section.end-cta {
+      opacity: 1 !important; transform: none !important; transition: none !important;
+    }
+  }
+
+  @media (max-width: 980px) {
+    :root { --page-padding: 24px; }
+    .colophon-grid { grid-template-columns: 1fr; gap: var(--space-l); }
+    footer.site-footer .inner { grid-template-columns: 1fr 1fr; }
+    section.about-section .head, section.colophon .head, section.contact .head { grid-template-columns: 1fr; }
+    section.about-section .num, section.colophon .num, section.contact .num { font-size: 72px; }
+  }
+  @media (max-width: 640px) {
+    header.site-nav .nav-inner { gap: 16px; flex-wrap: wrap; height: auto; padding: 14px 0; }
+    header.site-nav .nav-link, header.site-nav .social-lockup { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark-link">Experience Managed<span class="disc" aria-hidden="true"></span></a>
+    <a href="/opinion" class="nav-link">Opinion</a>
+    <a href="/code-patterns" class="nav-link">Code patterns</a>
+    <a href="/field-notes" class="nav-link">Field notes</a>
+    <a href="/about" class="nav-link active">About</a>
+    <span class="social-lockup">
+      <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+      <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+      <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+    </span>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="stage" aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="inner">
+    <div class="pad">
+      <p class="eyebrow">About · Colophon</p>
+      <h1><em>I'm</em> Chris.</h1>
+      <p class="dek">A working publication on content management — Adobe Experience Manager and Edge Delivery in particular. Independent of Adobe, where I work. Loyal to humans making things.</p>
+    </div>
+  </div>
+</section>
+
+<!-- §01 WHY THIS EXISTS -->
+<section class="about-section">
+  <div class="inner">
+    <div class="head">
+      <p class="num">01</p>
+      <h2>Why <em>this</em> exists.</h2>
+    </div>
+    <p>I started <em>Experience Managed</em> because the public writing about CMS work — especially AEM and Edge Delivery — reads like marketing collateral that someone forgot to redact. The honest version is messier, more interesting, and more useful.</p>
+    <p>I work at Adobe, but this blog is mine. I write when there's something I want in writing, and not when there isn't. The cadence is low. The signal — I hope — is high.</p>
+  </div>
+</section>
+
+<!-- §02 ADOBE BOUNDARY -->
+<section class="about-section">
+  <div class="inner">
+    <div class="head">
+      <p class="num">02</p>
+      <h2>The <em>Adobe</em> boundary.</h2>
+    </div>
+    <p>I'm an Adobe employee. <strong>This is not an Adobe blog.</strong></p>
+    <p>I'll be critical of the platform when it earns it. I won't be hostile, and I won't disclose what I shouldn't. If a piece touches a project I worked on, I'll say so. If a tool ships from another team that I have feelings about, I'll write about it as a practitioner, not a coworker.</p>
+    <p>The line is <em>"things that won't get me fired."</em> I think that's a fine line for a writer to know about themselves.</p>
+  </div>
+</section>
+
+<!-- §03 ON AI -->
+<section class="about-section">
+  <div class="inner">
+    <div class="head">
+      <p class="num">03</p>
+      <h2>On <em>AI</em>.</h2>
+    </div>
+    <p>I'm not in the <em>"real designers don't use AI"</em> camp. I'm not in the <em>"AI will replace us"</em> camp either.</p>
+    <p>The right question is: are humans still trying to make things? If yes, the tool — Claude, Codex, whatever comes next — is downstream. Some of the best work I've seen this year was made by people who let the tools help. Some of the worst was made by people who let the tools decide.</p>
+    <p>The publication tries to write about both, honestly.</p>
+  </div>
+</section>
+
+<!-- §04 COLOPHON -->
+<section class="colophon">
+  <div class="inner">
+    <div class="head">
+      <p class="num">04</p>
+      <h2>Colophon.</h2>
+    </div>
+    <dl class="colophon-grid">
+      <div class="colo-item">
+        <dt>Type</dt>
+        <dd><em>IvyOra Display</em> for display · IvyEpic Variable for body — both via Adobe Fonts. JetBrains Mono for code, via Google Fonts.</dd>
+      </div>
+      <div class="colo-item">
+        <dt>Palette</dt>
+        <dd>
+          <span class="swatch" style="background:#EEF0EC; outline: 1px solid var(--line);"></span>Stone &nbsp;
+          <span class="swatch" style="background:#E2E6DF; outline: 1px solid var(--line);"></span>Loam &nbsp;
+          <span class="swatch" style="background:#008000;"></span>Canopy <code>#008000</code><br>
+          <span class="swatch" style="background:#0A4F1C;"></span>Pine &nbsp;
+          <span class="swatch" style="background:#1A1A1A;"></span>Trunk
+        </dd>
+      </div>
+      <div class="colo-item">
+        <dt>Photography</dt>
+        <dd>Forest-coded; abstract; mostly commissioned, occasionally licensed. Out-of-focus, motion-blurred, or macro. Never warm-orange grade.</dd>
+      </div>
+      <div class="colo-item">
+        <dt>Built with</dt>
+        <dd>Adobe Edge Delivery Services. Source &amp; brand profile open at <code>github.com/chrismillar/em</code> for the curious.</dd>
+      </div>
+      <div class="colo-item">
+        <dt>Last redesigned</dt>
+        <dd>April 2026. Designed in dialogue with Claude.</dd>
+      </div>
+      <div class="colo-item">
+        <dt>Brand source</dt>
+        <dd><code>stardust/brand-profile.json</code> — the machine-readable source of truth for everything you see.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- §05 CONTACT -->
+<section class="contact">
+  <div class="inner">
+    <div class="head">
+      <p class="num">05</p>
+      <h2>Contact.</h2>
+    </div>
+    <p>Reach me at <code>chris@experiencemanaged.com</code> or <code>@chrismillar</code> on Bluesky, GitHub, and LinkedIn. Pitches and corrections welcome. <em>Press inquiries about Adobe go through Adobe.</em></p>
+  </div>
+</section>
+
+<!-- END SIGNOFF -->
+<section class="end-cta">
+  <div class="inner">
+    <p class="signoff">— Chris<span class="disc" aria-hidden="true"></span></p>
+    <a href="/" class="btn btn-link">Read the latest piece →</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <p class="end">Experience Managed<span class="disc" aria-hidden="true"></span></p>
+      <p class="deck">Thoughts on content management — a working publication on AEM and Edge Delivery. By Chris Millar. Independent of Adobe.</p>
+    </div>
+    <div>
+      <h5>The pillars</h5>
+      <ul>
+        <li><a href="/opinion">Opinion</a></li>
+        <li><a href="/code-patterns">Code patterns</a></li>
+        <li><a href="/field-notes">Field notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>The publication</h5>
+      <ul>
+        <li><a href="/about">About &amp; colophon</a></li>
+        <li><a href="mailto:chris@experiencemanaged.com">Contact</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow along</h5>
+      <span class="social-lockup">
+        <a href="/feed.xml" aria-label="RSS"><svg viewBox="0 0 16 16"><path d="M2.5 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM2 5.5V8a5.5 5.5 0 0 1 5.5 5.5h2.5A8 8 0 0 0 2 5.5zM2 1.5V4a9.5 9.5 0 0 1 9.5 9.5h2.5C14 6.6 8.4 1 2 1z"/></svg></a>
+        <a href="https://bsky.app" aria-label="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8C10.6 8.1 6.7 3 3.1 3 1.4 3 0 4.3 0 6.5c0 1.1.2 1.8.4 2.5.4 1.6 1 2.5 2.6 3.4 1.5.8 3 1.1 4.4 1.2-1.1.1-2.3.5-3.6 1.4C2.5 16 .4 17.7.4 19.4c0 2.2 1.6 3.5 3.4 3.5 3.5 0 6.6-4.7 8.2-7.4 1.6 2.7 4.7 7.4 8.2 7.4 1.8 0 3.4-1.3 3.4-3.5 0-1.7-2.1-3.4-3.4-4.4-1.3-.9-2.5-1.3-3.6-1.4 1.4-.1 2.9-.4 4.4-1.2 1.6-.9 2.2-1.8 2.6-3.4.2-.7.4-1.4.4-2.5C24 4.3 22.6 3 20.9 3c-3.6 0-7.5 5.1-8.9 7.8z"/></svg></a>
+        <a href="https://github.com" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 0z"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M3.5 1.5C3.5 2.3 2.8 3 2 3s-1.5-.7-1.5-1.5S1.2 0 2 0s1.5.7 1.5 1.5zM.3 4.3h3.4V15H.3V4.3zM6 4.3h3.3v1.5C9.7 5 10.7 4 12.4 4c2.5 0 3.6 1.4 3.6 4V15h-3.4v-6c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V15H5.4V4.3z"/></svg></a>
+      </span>
+    </div>
+    <div class="meta-row">
+      <span>© 2026 Chris Millar</span>
+      <span>Built with Adobe Edge Delivery Services</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const targets = 'section.about-section, section.colophon, section.contact, section.end-cta';
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll(targets).forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+  document.querySelectorAll(targets).forEach(s => io.observe(s));
+})();
+</script>
+
+</body>
+</html>
