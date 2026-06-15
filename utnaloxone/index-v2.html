@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utah Naloxone — Every day is a second chance</title>
+<meta name="description" content="Free naloxone (Narcan) in your hands. Reverse an opioid overdose, save a life. Utah Naloxone." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --amber:  oklch(0.81 0.125 73);
+    --coral:  oklch(0.69 0.180 27);          /* bright: decorative + large-on-dark only */
+    --coral-deep: oklch(0.55 0.195 26);       /* AA: CTA bg + accent text (5.16:1 both ways) */
+    --violet: oklch(0.56 0.225 285);
+    --paper:  oklch(0.987 0.008 85);
+    --paper-2: oklch(0.965 0.012 80);
+    --ink:    oklch(0.17 0.022 300);
+    --ink-2:  oklch(0.235 0.030 300);
+    --ink-soft: oklch(0.44 0.022 300);
+    --line:   oklch(0.86 0.012 85);
+    --line-strong: oklch(0.78 0.016 85);
+    --line-cta: oklch(0.60 0.020 300);        /* AA: outline-button boundary (3.83:1) */
+
+    --sunrise: linear-gradient(96deg, var(--amber), var(--coral) 50%, var(--violet));
+    --font-serif: "Hedvig Letters Serif", Georgia, serif;
+    --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --pad: clamp(1.25rem, 5vw, 6rem);
+    --maxw: 1320px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+  body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); line-height: 1.6; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  ::selection { background: var(--coral-deep); color: var(--paper); }
+
+  h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; line-height: 1.02; letter-spacing: -0.01em; }
+
+  /* eyebrow label: tick + tracked sans, no border */
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--font-sans);
+    font-weight: 600; font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
+  .eyebrow::before { content: ""; width: 26px; height: 6px; background: var(--sunrise); }
+  .num-ix { font-family: var(--font-sans); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--coral-deep); }
+
+  /* ---- buttons (sharp) ---- */
+  .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-sans);
+    font-weight: 600; font-size: 0.98rem; border: none; border-radius: 0; padding: 0.95rem 1.6rem; cursor: pointer;
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), background 0.4s, color 0.4s; }
+  .btn svg { width: 1.05em; height: 1.05em; }
+  .btn-primary { background: var(--coral-deep); color: var(--paper); }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
+  .btn-ink { background: var(--ink); color: var(--paper); }
+  .btn-ink:hover { background: var(--coral); transform: translateY(-2px); }
+  .btn-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line-cta); }
+  .btn-line:hover { box-shadow: inset 0 0 0 1.5px var(--ink); transform: translateY(-2px); }
+  .btn-paper { background: var(--paper); color: var(--ink); }
+  .btn-paper:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+  /* top brand rule */
+  .topbar { height: 5px; background: var(--sunrise); }
+
+  /* ---- header ---- */
+  header.site { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), backdrop-filter 0.4s; }
+  header.site::before { content:""; position:absolute; top:0; left:0; right:0; height:5px; background: var(--sunrise); }
+  header.site.scrolled { background: oklch(0.987 0.008 85 / 0.85); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+  header.site nav { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 1.15rem var(--pad); }
+  .brand { display: flex; align-items: center; gap: 0.65rem; }
+  .brand svg { width: 34px; height: 34px; }
+  .brand b { font-family: var(--font-serif); font-weight: 400; font-size: 1.32rem; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+  .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--ink-soft); transition: color 0.3s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { padding: 0.62rem 1.2rem; font-size: 0.92rem; }
+  @media (max-width: 880px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* ---- hero ---- */
+  .hero { padding: 9rem var(--pad) 0; }
+  .hero-inner { max-width: var(--maxw); margin: 0 auto; }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; padding-bottom: 2.4rem; border-bottom: 1px solid var(--line); }
+  .hero-top .eyebrow { margin-bottom: 0; }
+  .hero-meta { font-size: 0.88rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.55rem; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 oklch(0.69 0.18 27 / 0.5);} 70%{box-shadow:0 0 0 10px oklch(0.69 0.18 27 / 0);} 100%{box-shadow:0 0 0 0 oklch(0.69 0.18 27 / 0);} }
+  @media (max-width: 700px){ .hero-meta{ display:none; } }
+
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 4vw, 4.5rem); padding: clamp(2.5rem,5vw,4.5rem) 0 0; align-items: end; }
+  @media (max-width: 940px){ .hero-grid{ grid-template-columns: 1fr; } }
+  .hero h1 { font-size: clamp(3rem, 7.5vw, 6.4rem); letter-spacing: -0.025em; }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .line > span { display: block; will-change: transform; }
+  .hero h1 em { font-style: italic; color: var(--coral-deep); }
+  .hero p.lede { font-size: clamp(1.08rem, 1.5vw, 1.3rem); color: var(--ink-soft); max-width: 44ch; margin: 2rem 0; }
+  .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .hero-visual { position: relative; }
+  .hero-photo { position: relative; aspect-ratio: 4/5; overflow: hidden; clip-path: inset(0 0 0 0); }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tab { position: absolute; left: 0; bottom: 0; background: var(--ink); color: var(--paper); padding: 1rem 1.3rem; display: flex; align-items: baseline; gap: 0.6rem; }
+  .hero-tab b { font-family: var(--font-serif); font-size: 1.9rem; line-height: 1; }
+  .hero-tab span { font-size: 0.82rem; color: oklch(0.82 0.02 80); max-width: 16ch; }
+  .hero-rule { max-width: var(--maxw); margin: clamp(3rem,6vw,5rem) auto 0; height: 1px; background: var(--line); }
+
+  /* ---- sections ---- */
+  section.band { padding: clamp(4.5rem, 8vw, 7.5rem) var(--pad); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+  .sec-head { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; padding-bottom: clamp(2.5rem,5vw,4rem); border-bottom: 1px solid var(--line); margin-bottom: clamp(2.5rem,5vw,4rem); }
+  @media (max-width: 760px){ .sec-head{ grid-template-columns: 1fr; gap:1.2rem; } }
+  .sec-head h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); letter-spacing: -0.02em; }
+  .sec-head h2 em { font-style: italic; color: var(--coral-deep); }
+  .sec-head .lead-p { color: var(--ink-soft); font-size: 1.06rem; max-width: 46ch; }
+  .sec-head .eyebrow { margin-bottom: 1.2rem; }
+
+  .reveal { opacity: 0; transform: translateY(26px); }
+  .wipe { clip-path: inset(0 100% 0 0); }
+
+  /* ---- stakes ---- */
+  .stakes { background: var(--ink); color: var(--paper); }
+  .stakes .sec-head { border-color: oklch(0.32 0.03 300); }
+  .stakes .sec-head h2 em { color: var(--amber); }
+  .stakes .sec-head .lead-p { color: oklch(0.82 0.02 80); }
+  .stakes .eyebrow { color: oklch(0.78 0.02 80); }
+  .counters { display: grid; grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px){ .counters{ grid-template-columns: 1fr; } }
+  .counter { padding: 0.5rem clamp(1rem,2.5vw,2.4rem) 0.5rem 0; border-left: 0; }
+  .counter + .counter { padding-left: clamp(1rem,2.5vw,2.4rem); box-shadow: inset 1px 0 0 oklch(0.32 0.03 300); }
+  @media (max-width: 760px){ .counter + .counter{ box-shadow: none; border-top: 1px solid oklch(0.32 0.03 300); padding: 2rem 0 0; margin-top: 2rem; } }
+  .counter .n { font-family: var(--font-serif); font-size: clamp(3.4rem, 8vw, 6rem); line-height: 0.92; letter-spacing: -0.02em; color: var(--amber); }
+  .counter:nth-child(2) .n { color: var(--coral); }
+  .counter:nth-child(3) .n { color: oklch(0.70 0.16 290); }
+  .counter .suffix { font-size: 0.42em; }
+  .counter p { margin-top: 1rem; font-size: 1.02rem; color: oklch(0.84 0.02 80); max-width: 26ch; }
+  .stakes-foot { margin-top: clamp(2.5rem,5vw,4rem); padding-top: 2.4rem; border-top: 1px solid oklch(0.32 0.03 300); font-family: var(--font-serif); font-size: clamp(1.3rem,2.4vw,1.9rem); line-height: 1.3; max-width: 40ch; }
+  .stakes-foot em { color: var(--amber); font-style: italic; }
+
+  /* ---- how it works (pinned ring) ---- */
+  .how-pin { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(2rem,5vw,5.5rem); align-items: center;
+    min-height: min(640px, calc(100svh - 132px)); }
+  @media (max-width: 900px){ .how-pin{ grid-template-columns: 1fr; gap: 3rem; min-height: 0; } }
+
+  .ring-wrap { position: relative; width: 100%; max-width: 430px; margin-inline: auto; aspect-ratio: 1; }
+  .ring-wrap svg { width: 100%; height: 100%; overflow: visible; }
+  .ring-track { fill: none; stroke: var(--line); stroke-width: 8; }
+  .ring-fill { fill: none; stroke: url(#hgrad); stroke-width: 13; stroke-linecap: round; }
+  .ring-node { fill: var(--paper); stroke: var(--line-strong); stroke-width: 2.5; transition: fill 0.45s var(--ease), stroke 0.45s var(--ease); }
+  .ring-node.on { fill: var(--coral-deep); stroke: var(--coral-deep); }
+  .ring-center { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 0.55rem; text-align: center; padding: 12%; }
+  .glyph-stack { position: relative; width: 54px; height: 54px; }
+  .glyph-stack svg { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--coral-deep); opacity: 0; transform: scale(0.9); transition: opacity 0.45s var(--ease), transform 0.45s var(--ease); }
+  .glyph-stack svg.on { opacity: 1; transform: scale(1); }
+  .ring-num { font-family: var(--font-serif); font-size: clamp(3.8rem, 9vw, 6rem); line-height: 0.85; color: var(--ink); }
+  .ring-cap { font-family: var(--font-sans); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+
+  .steps { display: grid; }
+  .step { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; padding: 1.6rem 0; border-top: 1px solid var(--line); transition: opacity 0.4s var(--ease); opacity: 0.4; }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step.active { opacity: 1; }
+  .step .ix { font-family: var(--font-sans); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 0.85rem; color: var(--ink-soft); padding-top: 0.45rem; transition: color 0.4s; }
+  .step.active .ix { color: var(--coral-deep); }
+  .step h3 { font-size: clamp(1.45rem, 2.6vw, 2rem); }
+  .step p { color: var(--ink-soft); margin-top: 0.5rem; max-width: 42ch; }
+
+  /* ---- kits (strict grid, hairlines) ---- */
+  .kits-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  @media (max-width: 860px){ .kits-grid{ grid-template-columns: 1fr; } }
+  .kit { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0; background: var(--paper); transition: background 0.4s var(--ease); position: relative; }
+  .kit:hover { background: var(--paper-2); }
+  .kit .photo { aspect-ratio: 16/11; overflow: hidden; }
+  .kit .photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02); transition: transform 0.7s var(--ease); }
+  .kit:hover .photo img { transform: scale(1.05); }
+  .kit .body { padding: 1.6rem clamp(1.4rem,2vw,1.9rem) 1.9rem; }
+  .kit .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .kit .tag { font-family: var(--font-sans); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral-deep); }
+  .kit h3 { font-size: 1.55rem; margin: 0.8rem 0 0.6rem; }
+  .kit p { color: var(--ink-soft); font-size: 0.97rem; }
+  .kit .more { margin-top: 1.2rem; font-weight: 600; font-size: 0.92rem; color: var(--ink); display: inline-flex; align-items: center; gap: 0.45rem; }
+  .kit .more svg { width: 1em; height: 1em; transition: transform 0.4s var(--ease); }
+  .kit:hover .more svg { transform: translateX(4px); }
+
+  /* ---- story ---- */
+  .story { background: var(--ink); color: var(--paper); }
+  .story-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem,5vw,4.5rem); align-items: stretch; }
+  @media (max-width: 880px){ .story-grid{ grid-template-columns: 1fr; } }
+  .story-photo { aspect-ratio: 3/4; overflow: hidden; }
+  .story-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .story-body { display: flex; flex-direction: column; justify-content: center; }
+  .story .eyebrow { color: var(--amber); }
+  .story .eyebrow::before { background: var(--amber); }
+  .story blockquote { font-family: var(--font-serif); font-size: clamp(1.7rem, 3.6vw, 2.9rem); line-height: 1.2; letter-spacing: -0.015em; margin: 1.5rem 0; }
+  .story blockquote em { font-style: italic; color: var(--amber); }
+  .story cite { font-style: normal; font-size: 0.98rem; color: oklch(0.82 0.02 80); display: flex; align-items: center; gap: 0.7rem; }
+  .story cite::before { content:""; width: 28px; height: 1px; background: oklch(0.6 0.02 80); }
+
+  /* ---- train / give ---- */
+  .train .split { display: grid; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 760px){ .train .split{ grid-template-columns: 1fr; } }
+  .card2 { padding: clamp(2rem,3.2vw,3rem); min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card2 .eyebrow { margin-bottom: auto; }
+  .card2 h3 { font-size: clamp(1.7rem,3vw,2.4rem); margin: 1.4rem 0 0.7rem; max-width: 15ch; }
+  .card2 h3 em { font-style: italic; }
+  .card2 p { max-width: 34ch; }
+  .learn { background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); }
+  .learn p { color: var(--ink-soft); }
+  .give { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+  .give::after { content:""; position:absolute; inset:0 0 auto 0; height:5px; background: var(--sunrise); }
+  .give p { color: oklch(0.84 0.02 80); }
+  .give h3 em { color: var(--amber); }
+  .card2 .btn { align-self: flex-start; margin-top: 2rem; }
+
+  /* ---- final ---- */
+  .final { text-align: center; padding: clamp(5rem,9vw,8.5rem) var(--pad); border-top: 1px solid var(--line); }
+  .final .eyebrow { justify-content: center; margin-bottom: 1.6rem; }
+  .final h2 { font-size: clamp(2.6rem, 6.5vw, 5.4rem); letter-spacing: -0.025em; max-width: 18ch; margin: 0 auto 1.4rem; }
+  .final h2 em { font-style: italic; color: var(--coral-deep); }
+  .final p { color: var(--ink-soft); font-size: 1.15rem; max-width: 42ch; margin: 0 auto 2.2rem; }
+
+  /* ---- footer ---- */
+  footer.site { background: var(--ink); color: oklch(0.82 0.02 80); padding: clamp(3.5rem,6vw,5rem) var(--pad) 2.5rem; }
+  .foot-grid { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 3rem; border-bottom: 1px solid oklch(0.30 0.03 300); }
+  @media (max-width: 760px){ .foot-grid{ grid-template-columns: 1fr 1fr; } }
+  footer .brand b { color: var(--paper); }
+  footer .blurb { margin-top: 1.1rem; max-width: 30ch; font-size: 0.95rem; }
+  footer h5 { color: var(--paper); font-family: var(--font-sans); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.1rem; }
+  footer ul { list-style: none; display: grid; gap: 0.65rem; }
+  footer ul a { font-size: 0.93rem; transition: color 0.3s; }
+  footer ul a:hover { color: var(--amber); }
+  .foot-bottom { max-width: var(--maxw); margin: 1.8rem auto 0; font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+  @media (prefers-reduced-motion: reduce){ .reveal,.wipe{ opacity:1!important; transform:none!important; clip-path:none!important; } .dot{animation:none;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="#" aria-label="Utah Naloxone home">
+      <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="52" y2="52">
+          <stop offset="0" stop-color="#FFB347"/><stop offset="0.5" stop-color="#FF6B5C"/><stop offset="1" stop-color="#7C5CFF"/>
+        </linearGradient></defs>
+        <path d="M4 38a22 22 0 0 1 44 0" fill="url(#bm)"/>
+        <line x1="2" y1="42" x2="50" y2="42" stroke="#1A1426" stroke-width="3"/>
+      </svg>
+      <b>Utah Naloxone</b>
+    </a>
+    <div class="nav-links">
+      <a href="#stakes">Why it matters</a>
+      <a href="#how">How it works</a>
+      <a href="#kits">Find a kit</a>
+      <a href="#train">Get trained</a>
+      <a class="btn btn-primary nav-cta" href="#final">Get a free kit</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <span class="eyebrow">Free naloxone · No questions asked</span>
+        <span class="hero-meta"><span class="dot"></span> 200+ pickup locations across Utah</span>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>
+            <span class="line"><span>Every day is</span></span>
+            <span class="line"><span>a <em>second</em></span></span>
+            <span class="line"><span>chance.</span></span>
+          </h1>
+          <p class="lede">Naloxone reverses an opioid overdose in minutes. It's free, simple to use, and keeping it nearby is the most precise thing you can do to keep someone alive.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#final">Get a free kit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-line" href="#how">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo wipe">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&q=80" alt="A woman standing in warm morning light, looking forward with quiet hope" />
+          </div>
+          <div class="hero-tab"><b>90s</b><span>to learn how to save a life</span></div>
+        </div>
+      </div>
+      <div class="hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- STAKES -->
+  <section class="band stakes" id="stakes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Why it matters</span>
+          <h2>An emergency we can <em>actually reverse.</em></h2>
+        </div>
+        <p class="lead-p">The numbers are heavy. But almost every one of these deaths is preventable when naloxone is close and someone knows what to do.</p>
+      </div>
+      <div class="counters">
+        <div class="counter reveal"><div class="n"><span data-count="10">0</span></div><p>Utahns die from a drug overdose every single week.</p></div>
+        <div class="counter reveal"><div class="n"><span data-count="5">0</span><span class="suffix"> min</span></div><p>One American dies of an overdose roughly every five minutes.</p></div>
+        <div class="counter reveal"><div class="n"><span data-count="90">0</span><span class="suffix">%</span></div><p>of opioid overdoses can be reversed when naloxone is given in time.</p></div>
+      </div>
+      <p class="stakes-foot reveal">Naloxone only works on opioids, and it <em>can never harm</em> someone who hasn't taken any. There is no downside to carrying it.</p>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="band how" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps to <em>save a life.</em></h2>
+        </div>
+        <p class="lead-p">You don't need to be a doctor. If you can follow three steps, you can reverse an overdose.</p>
+      </div>
+      <div class="how-pin">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 360 360" role="img" aria-label="Progress through the three steps">
+            <defs><linearGradient id="hgrad" x1="20" y1="20" x2="340" y2="340" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFB347"/><stop offset="0.5" stop-color="#FF6B5C"/><stop offset="1" stop-color="#7C5CFF"/>
+            </linearGradient></defs>
+            <circle class="ring-track" cx="180" cy="180" r="150"/>
+            <circle class="ring-fill" id="ringFill" cx="180" cy="180" r="150" transform="rotate(-90 180 180)"/>
+            <circle class="ring-node" id="node0" cx="180" cy="30" r="9"/>
+            <circle class="ring-node" id="node1" cx="310" cy="255" r="9"/>
+            <circle class="ring-node" id="node2" cx="50" cy="255" r="9"/>
+          </svg>
+          <div class="ring-center">
+            <div class="glyph-stack" aria-hidden="true">
+              <svg class="on" data-g="0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg data-g="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M12 3v4M8 7h8l-1 13a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2L8 7z"/><path d="M9.5 13h5"/></svg>
+              <svg data-g="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ring-num" id="ringNum">01</div>
+            <div class="ring-cap" id="ringCap">Step 1 of 3</div>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step active" data-step="0">
+            <span class="ix">01</span>
+            <div><h3>Recognize the signs</h3><p>Slow or stopped breathing, blue or gray lips, pinpoint pupils, no response to their name or a shake. When in doubt, act.</p></div>
+          </div>
+          <div class="step" data-step="1">
+            <span class="ix">02</span>
+            <div><h3>Give the naloxone</h3><p>Spray one dose into a nostril, or inject it. It's designed so anyone can use it correctly the very first time.</p></div>
+          </div>
+          <div class="step" data-step="2">
+            <span class="ix">03</span>
+            <div><h3>Call 911 &amp; stay</h3><p>Call for help, give a second dose after 2–3 minutes if needed, and stay until help arrives. Utah's Good Samaritan law protects you.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITS -->
+  <section class="band kits" id="kits">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Find a kit</span>
+          <h2>Get naloxone in <em>your life</em> today.</h2>
+        </div>
+        <p class="lead-p">Pick it up nearby, have it mailed to your door, or ask your pharmacist. However you do it, it's free.</p>
+      </div>
+      <div class="kits-grid">
+        <article class="kit reveal">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=80" alt="Sunlight falling across the shelves of a public library" /></div>
+          <div class="body">
+            <div class="row"><span class="tag">Libraries</span><span class="num-ix">01</span></div>
+            <h3>Your local library</h3>
+            <p>Walk in and ask. Dozens of Utah libraries keep free kits behind the desk, no card or questions needed.</p>
+            <a class="more" href="#">Find a library <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="kit reveal">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?auto=format&fit=crop&w=900&q=80" alt="A person smiling warmly, holding out an open hand" /></div>
+          <div class="body">
+            <div class="row"><span class="tag">By mail</span><span class="num-ix">02</span></div>
+            <h3>Mailed to your door</h3>
+            <p>Request a kit online and we'll send it discreetly, anywhere in Utah, completely free of charge.</p>
+            <a class="more" href="#final">Request a kit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="kit reveal">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="A pharmacist in a white coat ready to help a patient" /></div>
+          <div class="body">
+            <div class="row"><span class="tag">Pharmacies</span><span class="num-ix">03</span></div>
+            <h3>Ask your pharmacist</h3>
+            <p>Utah's standing order lets any pharmacist hand you naloxone without a personal prescription.</p>
+            <a class="more" href="#">How to ask <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="band story">
+    <div class="wrap story-grid">
+      <div class="story-photo wipe"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Two people holding each other close, one comforting the other" /></div>
+      <div class="story-body reveal">
+        <span class="eyebrow">A second chance</span>
+        <blockquote>“I keep naloxone in my bag the way I keep a phone charger. The night I used it on my brother, <em>I got to keep my brother.</em>”</blockquote>
+        <cite>Maria R., Salt Lake City</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAIN / GIVE -->
+  <section class="band train" id="train" style="padding-inline:0">
+    <div class="split wrap" style="max-width:none; margin:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+      <div class="card2 learn reveal">
+        <span class="eyebrow">Get trained</span>
+        <div>
+          <h3>Learn the steps in <em>90 seconds.</em></h3>
+          <p>Watch a short video, or book a free in-person training for your workplace, school, or community group.</p>
+        </div>
+        <a class="btn btn-ink" href="#">Watch &amp; book training</a>
+      </div>
+      <div class="card2 give reveal">
+        <span class="eyebrow" style="color:var(--paper)">Fuel the work</span>
+        <div>
+          <h3>$25 puts another kit in <em>someone's hands.</em></h3>
+          <p>Every dollar goes toward kits, training, and getting naloxone where it's needed most.</p>
+        </div>
+        <a class="btn btn-paper" href="#">Donate today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" id="final">
+    <span class="eyebrow">Free · Confidential · No questions asked</span>
+    <h2>Let's get naloxone <em>in your life.</em></h2>
+    <p>It takes two minutes to request a kit. It could give someone the rest of their life.</p>
+    <a class="btn btn-primary" href="#" style="font-size:1.08rem; padding:1.1rem 2.1rem">Request your free kit
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div>
+      <span class="brand">
+        <svg viewBox="0 0 52 52" fill="none" aria-hidden="true" style="width:34px;height:34px">
+          <path d="M4 38a22 22 0 0 1 44 0" fill="url(#bm)"/>
+          <line x1="2" y1="42" x2="50" y2="42" stroke="#FFF6EE" stroke-width="3"/>
+        </svg>
+        <b>Utah Naloxone</b>
+      </span>
+      <p class="blurb">Putting free, life-saving naloxone into the hands of everyday Utahns. Because every day is a second chance.</p>
+    </div>
+    <div><h5>Get naloxone</h5><ul><li><a href="#">Request a kit</a></li><li><a href="#">Find a location</a></li><li><a href="#">For pharmacists</a></li></ul></div>
+    <div><h5>Learn</h5><ul><li><a href="#">Recognize an overdose</a></li><li><a href="#">Book a training</a></li><li><a href="#">Recovery resources</a></li></ul></div>
+    <div><h5>Support</h5><ul><li><a href="#">Donate</a></li><li><a href="#">Volunteer</a></li><li><a href="#">Contact us</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Utah Naloxone · A Utah public-health initiative</span>
+    <span>If this is an emergency, call 911.</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lenis;
+  if (!reduce && typeof Lenis !== 'undefined') {
+    lenis = new Lenis({ duration: 1.1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    lenis.on('scroll', () => { if (window.ScrollTrigger) ScrollTrigger.update(); });
+    (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })();
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) { const el = document.querySelector(id); if (el){ e.preventDefault(); lenis ? lenis.scrollTo(el,{offset:-70}) : el.scrollIntoView({behavior:'smooth'}); } }
+  }));
+  const header = document.querySelector('header.site');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!reduce) {
+      gsap.from('.hero h1 .line > span', { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: 0.09, delay: 0.15 });
+      gsap.from('.hero .eyebrow, .hero-meta, .hero .lede, .hero-cta', { y: 22, opacity: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08, delay: 0.5 });
+      gsap.to('.hero-photo', { clipPath: 'inset(0 0 0 0)', duration: 1.2, ease: 'expo.out', delay: 0.35, onComplete(){ this.targets()[0].style.clipPath='none'; } });
+      gsap.from('.hero-photo img', { scale: 1.15, duration: 1.4, ease: 'expo.out', delay: 0.35 });
+      gsap.to('.hero-photo img', { yPercent: -7, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    }
+    gsap.utils.toArray('.reveal').forEach(el => gsap.to(el, { opacity:1, y:0, duration:1, ease:'expo.out', scrollTrigger:{ trigger: el, start:'top 86%' } }));
+    gsap.utils.toArray('.wipe').forEach(el => gsap.to(el, { clipPath:'inset(0 0% 0 0)', duration:1.1, ease:'expo.out', scrollTrigger:{ trigger: el, start:'top 84%' }, onComplete(){ el.style.clipPath='none'; } }));
+
+    gsap.utils.toArray('[data-count]').forEach(el => {
+      const target = +el.dataset.count, obj = { v: 0 };
+      ScrollTrigger.create({ trigger: el, start:'top 82%', once:true,
+        onEnter: () => gsap.to(obj, { v: target, duration: 1.8, ease:'expo.out', onUpdate(){ el.textContent = Math.round(obj.v); } }) });
+    });
+
+    const steps = gsap.utils.toArray('.step');
+    const nodes = ['node0','node1','node2'].map(id => document.getElementById(id));
+    const glyphs = gsap.utils.toArray('.glyph-stack svg');
+    const ringFill = document.getElementById('ringFill');
+    const ringNum = document.getElementById('ringNum');
+    const ringCap = document.getElementById('ringCap');
+    const LEN = 2 * Math.PI * 150;
+    ringFill.style.strokeDasharray = LEN;
+    ringFill.style.strokeDashoffset = LEN; // start empty
+
+    const setActive = i => {
+      steps.forEach((s,n) => s.classList.toggle('active', n === i));
+      glyphs.forEach((g,n) => g.classList.toggle('on', n === i));
+      nodes.forEach((nd,n) => nd.classList.toggle('on', n <= i));
+      ringNum.textContent = '0' + (i + 1);
+      ringCap.textContent = `Step ${i + 1} of 3`;
+    };
+    setActive(0);
+
+    const canPin = !reduce && window.matchMedia('(min-width: 901px)').matches;
+    if (canPin) {
+      ScrollTrigger.create({
+        trigger: '.how-pin', start: 'top 92px', end: '+=170%', pin: true, scrub: 0.6,
+        onUpdate: self => {
+          const p = self.progress;
+          ringFill.style.strokeDashoffset = LEN * (1 - p);
+          setActive(p < 0.34 ? 0 : p < 0.67 ? 1 : 2);
+        }
+      });
+    } else {
+      // mobile / reduced-motion: everything legible at once, ring complete
+      ringFill.style.strokeDashoffset = 0;
+      steps.forEach(s => s.classList.add('active'));
+      nodes.forEach(nd => nd.classList.add('on'));
+      glyphs[0].classList.add('on');
+    }
+  }
+</script>
+</body>
+</html>

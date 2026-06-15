@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utah Naloxone — Brand Board v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --amber:  oklch(0.81 0.125 73);
+    --coral:  oklch(0.69 0.180 27);
+    --coral-deep: oklch(0.60 0.190 26);
+    --violet: oklch(0.56 0.225 285);
+    --paper:  oklch(0.987 0.008 85);
+    --paper-2: oklch(0.965 0.012 80);
+    --ink:    oklch(0.17 0.022 300);
+    --ink-soft: oklch(0.44 0.022 300);
+    --line:   oklch(0.86 0.012 85);
+    --line-strong: oklch(0.78 0.016 85);
+    --sunrise: linear-gradient(96deg, var(--amber), var(--coral) 50%, var(--violet));
+    --font-serif: "Hedvig Letters Serif", Georgia, serif;
+    --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); line-height: 1.55; padding: clamp(1.25rem,4vw,4rem); }
+  .board { max-width: 1120px; margin: 0 auto; }
+  h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; line-height: 1.02; letter-spacing:-0.01em; }
+  em { font-style: italic; color: var(--coral-deep); }
+
+  .eyebrow { display:inline-flex; align-items:center; gap:0.6rem; font-weight:600; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-soft); }
+  .eyebrow::before { content:""; width:24px; height:6px; background:var(--sunrise); }
+
+  /* masthead */
+  .masthead { border-top:5px solid transparent; border-image: var(--sunrise) 1; padding: clamp(2rem,4vw,3.5rem) 0; border-bottom:1px solid var(--line); }
+  .masthead h1 { font-size: clamp(2.6rem,7vw,5rem); letter-spacing:-0.025em; margin:1rem 0 1.2rem; max-width:16ch; }
+  .masthead p { max-width:54ch; color:var(--ink-soft); font-size:1.08rem; }
+  .lockup { display:flex; align-items:center; gap:0.7rem; margin-top:2rem; }
+  .lockup svg { width:46px; height:46px; }
+  .lockup b { font-family:var(--font-serif); font-size:1.5rem; }
+
+  section { padding: clamp(2.5rem,5vw,4rem) 0; border-bottom:1px solid var(--line); }
+  .sec-label { font-weight:600; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--coral-deep); margin-bottom:1.6rem; display:flex; align-items:center; gap:0.7rem; }
+  .sec-label span:last-child { color:var(--ink-soft); font-weight:500; letter-spacing:0.04em; text-transform:none; }
+
+  /* color */
+  .swatches { display:grid; grid-template-columns:repeat(6,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  @media (max-width:760px){ .swatches{ grid-template-columns:repeat(3,1fr); } }
+  .swatch { border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .swatch .chip { height:96px; }
+  .swatch .meta { padding:0.7rem 0.8rem; }
+  .swatch .name { font-weight:600; font-size:0.92rem; }
+  .swatch .val { font-size:0.7rem; color:var(--ink-soft); font-variant-numeric:tabular-nums; margin-top:0.15rem; }
+  .grad { height:108px; background:var(--sunrise); margin-top:1.4rem; display:flex; align-items:flex-end; padding:0.9rem 1.1rem; color:var(--paper); font-weight:600; font-size:0.84rem; }
+
+  /* type */
+  .type-row { padding:1.2rem 0; border-top:1px solid var(--line); }
+  .type-row:first-child { border-top:none; }
+  .type-meta { font-size:0.72rem; color:var(--ink-soft); letter-spacing:0.05em; margin-bottom:0.3rem; }
+  .d1 { font-size:clamp(2.6rem,7vw,4.6rem); letter-spacing:-0.025em; }
+  .d2 { font-size:clamp(1.7rem,4vw,2.6rem); letter-spacing:-0.015em; }
+  .body-lg { font-family:var(--font-sans); font-size:1.18rem; max-width:60ch; color:var(--ink-soft); }
+  .body-base { font-family:var(--font-sans); font-size:1rem; max-width:66ch; color:var(--ink-soft); }
+
+  /* components */
+  .comp-grid { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  @media (max-width:680px){ .comp-grid{ grid-template-columns:1fr; } }
+  .panel { border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:1.6rem; }
+  .panel h4 { font-family:var(--font-sans); font-weight:600; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:1.2rem; }
+
+  .btn { display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-sans); font-weight:600; font-size:0.96rem; border:none; border-radius:0; padding:0.85rem 1.5rem; cursor:pointer; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .btn-primary { background:var(--coral); color:var(--paper); }
+  .btn-primary:hover { background:var(--ink); transform:translateY(-2px); }
+  .btn-line { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1px var(--line-strong); }
+  .btn-line:hover { box-shadow:inset 0 0 0 1px var(--ink); transform:translateY(-2px); }
+  .btn-row { display:flex; gap:0.7rem; flex-wrap:wrap; }
+
+  .pill-row { display:flex; gap:0; flex-wrap:wrap; }
+  .pill { font-weight:600; font-size:0.78rem; padding:0.4rem 0.9rem; box-shadow:inset 0 0 0 1px var(--line-strong); }
+  .pill + .pill { margin-left:-1px; }
+  .pill.grad { background:var(--sunrise); color:var(--paper); box-shadow:none; }
+
+  .stat .n { font-family:var(--font-serif); font-size:3.2rem; line-height:1; color:var(--coral-deep); }
+  .stat .l { font-size:0.9rem; color:var(--ink-soft); margin-top:0.4rem; max-width:24ch; }
+
+  .voice { list-style:none; display:grid; gap:0.7rem; }
+  .voice li { display:grid; grid-template-columns:1.4rem 1fr; gap:0.5rem; font-size:0.98rem; color:var(--ink-soft); align-items:baseline; }
+  .voice .y { color:var(--violet); font-weight:700; }
+  .voice .x { color:var(--ink-soft); opacity:0.5; font-weight:700; }
+
+  .note { padding:2rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="masthead">
+    <span class="eyebrow">Brand Board · v2 · Precise &amp; Hopeful</span>
+    <h1>Every day is a <em>second chance.</em></h1>
+    <p>A precise, modern identity for Utah Naloxone: serif clarity, a strict grid, sharp edges, and the sunrise gradient used as a deliberate signal, not decoration.</p>
+    <div class="lockup">
+      <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="52" y2="52"><stop offset="0" stop-color="#FFB347"/><stop offset="0.5" stop-color="#FF6B5C"/><stop offset="1" stop-color="#7C5CFF"/></linearGradient></defs>
+        <path d="M4 38a22 22 0 0 1 44 0" fill="url(#g)"/>
+        <line x1="2" y1="42" x2="50" y2="42" stroke="#1A1426" stroke-width="3"/>
+      </svg>
+      <b>Utah Naloxone</b>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-label"><span>Color</span><span>Sunrise, applied with restraint</span></div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--amber)"></div><div class="meta"><div class="name">Amber</div><div class="val">oklch(0.81 0.125 73)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--coral)"></div><div class="meta"><div class="name">Coral · CTA</div><div class="val">oklch(0.69 0.18 27)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--violet)"></div><div class="meta"><div class="name">Violet</div><div class="val">oklch(0.56 0.225 285)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--paper); box-shadow:inset 0 0 0 1px var(--line)"></div><div class="meta"><div class="name">Paper</div><div class="val">oklch(0.987 0.008 85)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--paper-2)"></div><div class="meta"><div class="name">Paper 2</div><div class="val">oklch(0.965 0.012 80)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><div class="name">Ink</div><div class="val">oklch(0.17 0.022 300)</div></div></div>
+    </div>
+    <div class="grad">linear-gradient(96°, amber → coral → violet) — a precise 5px rule, a single hero panel, key fills. Never blurred ambience.</div>
+  </section>
+
+  <section>
+    <div class="sec-label"><span>Typography</span><span>Hedvig Letters Serif + Hanken Grotesk</span></div>
+    <div class="type-row"><div class="type-meta">Display — Hedvig Letters Serif</div><div class="d1">Get naloxone in <em>your life.</em></div></div>
+    <div class="type-row"><div class="type-meta">Display — Hedvig Letters Serif, italic accent</div><div class="d2">Anyone can save a life. It takes <em>90 seconds</em> to learn how.</div></div>
+    <div class="type-row"><div class="type-meta">Body large — Hanken Grotesk 500</div><p class="body-lg">Ten Utahns die every week from a drug overdose. Most of those deaths are reversible when naloxone is close by and someone knows what to do.</p></div>
+    <div class="type-row"><div class="type-meta">Body — Hanken Grotesk 400</div><p class="body-base">Free naloxone kits are available at libraries and fire stations across the state, no questions asked. Naloxone only works on opioids and it can never hurt someone who hasn't taken any.</p></div>
+  </section>
+
+  <section style="border-bottom:none">
+    <div class="sec-label"><span>Components</span><span>Sharp corners, hairline structure</span></div>
+    <div class="comp-grid">
+      <div class="panel">
+        <h4>Buttons</h4>
+        <div class="btn-row"><button class="btn btn-primary">Get a free kit</button><button class="btn btn-line">Get trained</button></div>
+      </div>
+      <div class="panel">
+        <h4>Labels (joined, hairline)</h4>
+        <div class="pill-row"><span class="pill grad">Free</span><span class="pill">Libraries</span><span class="pill">Fire stations</span><span class="pill">Mail</span></div>
+      </div>
+      <div class="panel">
+        <h4>Stat moment</h4>
+        <div class="stat"><div class="n">90s</div><div class="l">to learn the steps that reverse an overdose</div></div>
+      </div>
+      <div class="panel">
+        <h4>Voice</h4>
+        <ul class="voice">
+          <li><span class="y">✓</span><span>"people who use drugs" — warm, hopeful, direct</span></li>
+          <li><span class="x">✕</span><span>"addicts" — fear, shame, clinical stiffness</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <p class="note">Utah Naloxone brand refresh · v2 precise system · sunrise palette authored in OKLCH</p>
+</div>
+</body>
+</html>

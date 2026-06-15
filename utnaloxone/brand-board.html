@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utah Naloxone — Brand Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* sunrise palette — OKLCH */
+    --amber:  oklch(0.81 0.125 73);
+    --coral:  oklch(0.70 0.175 27);
+    --violet: oklch(0.59 0.220 285);
+    --cream:  oklch(0.975 0.012 75);
+    --cream-2: oklch(0.955 0.018 70);
+    --ink:    oklch(0.22 0.030 305);
+    --ink-soft: oklch(0.38 0.028 305);
+    --plum:   oklch(0.20 0.040 300);
+    --line:   oklch(0.88 0.020 70);
+
+    --sunrise: linear-gradient(100deg, var(--amber), var(--coral) 48%, var(--violet));
+    --radius: 18px;
+
+    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: clamp(1.5rem, 5vw, 5rem);
+  }
+
+  .board { max-width: 1100px; margin: 0 auto; }
+
+  /* masthead */
+  .masthead {
+    border-radius: 28px;
+    padding: clamp(2rem, 5vw, 4rem);
+    background: var(--plum);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .masthead::before {
+    content: "";
+    position: absolute; inset: -40% -10% auto auto;
+    width: 70%; aspect-ratio: 1; border-radius: 50%;
+    background: var(--sunrise);
+    filter: blur(10px);
+    opacity: 0.92;
+    z-index: -1;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(120% 90% at 80% -10%, transparent 40%, var(--plum) 78%);
+    z-index: -1;
+  }
+  .kicker {
+    font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; opacity: 0.85;
+  }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 0.98;
+    margin: 0.6rem 0 1rem; letter-spacing: -0.02em; max-width: 16ch;
+  }
+  .masthead p { max-width: 52ch; opacity: 0.9; font-size: 1.05rem; }
+
+  /* logo lockup */
+  .lockup { display: flex; align-items: center; gap: 0.7rem; margin-top: 2rem; }
+  .mark { width: 52px; height: 52px; flex: none; }
+  .wordmark { font-family: var(--font-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; }
+
+  /* sections */
+  section { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .sec-label {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--coral); margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .sec-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  /* color */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; }
+  .swatch { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #fff; }
+  .swatch .chip { height: 92px; }
+  .swatch .meta { padding: 0.7rem 0.85rem; }
+  .swatch .name { font-weight: 600; font-size: 0.95rem; }
+  .swatch .val { font-size: 0.72rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .gradient-bar {
+    height: 120px; border-radius: var(--radius); background: var(--sunrise);
+    margin-top: 0.9rem; display: flex; align-items: flex-end; padding: 0.9rem 1.1rem;
+    color: var(--cream); font-weight: 600; font-size: 0.85rem;
+    text-shadow: 0 1px 8px rgba(40,20,40,0.25);
+  }
+
+  /* type specimen */
+  .type-row { padding: 1rem 0; border-top: 1px solid var(--line); }
+  .type-row:first-child { border-top: none; }
+  .type-meta { font-size: 0.74rem; color: var(--ink-soft); letter-spacing: 0.04em; margin-bottom: 0.2rem; }
+  .d1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem,7vw,4.5rem); line-height: 0.95; letter-spacing: -0.025em; }
+  .d2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem,4vw,2.4rem); letter-spacing: -0.015em; }
+  .body-lg { font-size: 1.18rem; max-width: 60ch; color: var(--ink-soft); }
+  .body-base { font-size: 1rem; max-width: 65ch; color: var(--ink-soft); }
+
+  /* components */
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; }
+  .panel h4 { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1rem; }
+
+  .btn {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.98rem;
+    border: none; border-radius: 999px; padding: 0.8rem 1.5rem; cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+  }
+  .btn-primary { background: var(--coral); color: var(--cream); box-shadow: 0 8px 22px -10px var(--coral); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px var(--coral); }
+  .btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn-outline:hover { transform: translateY(-2px); background: var(--ink); color: var(--cream); }
+  .btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; }
+
+  .badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 600;
+    padding: 0.35rem 0.8rem; border-radius: 999px; background: var(--cream-2); border: 1px solid var(--line); }
+  .badge.grad { background: var(--sunrise); color: var(--cream); border: none; }
+  .badge-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+  .stat .num { font-family: var(--font-display); font-weight: 800; font-size: 3rem; line-height: 1; color: var(--coral); }
+  .stat .lbl { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.3rem; max-width: 24ch; }
+
+  .voice-list { list-style: none; display: grid; gap: 0.6rem; }
+  .voice-list li { display: flex; gap: 0.6rem; font-size: 0.98rem; color: var(--ink-soft); }
+  .voice-list .yes { color: var(--violet); font-weight: 700; }
+  .voice-list .no { color: var(--ink-soft); opacity: 0.55; }
+
+  footer.note { margin-top: 4rem; font-size: 0.8rem; color: var(--ink-soft); text-align: center; }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="masthead">
+    <div class="kicker">Brand Board · 2026 Refresh</div>
+    <h1>Every day is a second chance.</h1>
+    <p>A warmer, more human identity for Utah Naloxone, reframing naloxone from emergency equipment into an everyday act of care.</p>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="52" y2="52">
+            <stop offset="0" stop-color="#FFB347"/><stop offset="0.5" stop-color="#FF6B5C"/><stop offset="1" stop-color="#7C5CFF"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 38a22 22 0 0 1 44 0" fill="url(#g)"/>
+        <line x1="2" y1="42" x2="50" y2="42" stroke="#FFF6EE" stroke-width="3" stroke-linecap="round"/>
+        <path d="M14 42a12 12 0 0 1 24 0" stroke="#FFF6EE" stroke-width="2.4" stroke-linecap="round" opacity="0.55" fill="none"/>
+      </svg>
+      <span class="wordmark">Utah Naloxone</span>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <section>
+    <div class="sec-label">Color · Sunrise</div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--amber)"></div><div class="meta"><div class="name">Amber</div><div class="val">oklch(0.81 0.125 73)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--coral)"></div><div class="meta"><div class="name">Coral · CTA</div><div class="val">oklch(0.70 0.175 27)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--violet)"></div><div class="meta"><div class="name">Violet</div><div class="val">oklch(0.59 0.22 285)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--cream); border-bottom:1px solid var(--line)"></div><div class="meta"><div class="name">Cream · Canvas</div><div class="val">oklch(0.975 0.012 75)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--plum)"></div><div class="meta"><div class="name">Deep Plum</div><div class="val">oklch(0.20 0.04 300)</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><div class="name">Ink</div><div class="val">oklch(0.22 0.03 305)</div></div></div>
+    </div>
+    <div class="gradient-bar">linear-gradient(100deg, amber → coral → violet) — the load-bearing brand signature</div>
+  </section>
+
+  <!-- TYPE -->
+  <section>
+    <div class="sec-label">Typography · Bricolage Grotesque + Hanken Grotesk</div>
+    <div class="type-row">
+      <div class="type-meta">Display — Bricolage Grotesque 800</div>
+      <div class="d1">Get naloxone in your life.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Display — Bricolage Grotesque 700</div>
+      <div class="d2">Anyone can save a life. It takes 90 seconds to learn how.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Body large — Hanken Grotesk 500</div>
+      <p class="body-lg">Ten Utahns die every week from a drug overdose. Most of those deaths are reversible when naloxone is close by and someone knows what to do.</p>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Body — Hanken Grotesk 400</div>
+      <p class="body-base">Free naloxone kits are available at libraries and fire stations across the state, no questions asked. Request one online, pick one up nearby, or carry one just in case. Naloxone only works on opioids and it can never hurt someone who hasn't taken any.</p>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <div class="sec-label">Components</div>
+    <div class="comp-grid">
+      <div class="panel">
+        <h4>Buttons</h4>
+        <div class="btn-row">
+          <button class="btn btn-primary">Get a free kit</button>
+          <button class="btn btn-outline">Get trained</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h4>Badges</h4>
+        <div class="badge-row">
+          <span class="badge grad">Free · No questions</span>
+          <span class="badge">Libraries</span>
+          <span class="badge">Fire stations</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h4>Stat moment</h4>
+        <div class="stat"><div class="num">90s</div><div class="lbl">to learn the steps that reverse an overdose</div></div>
+      </div>
+      <div class="panel">
+        <h4>Voice</h4>
+        <ul class="voice-list">
+          <li><span class="yes">✓</span> "people who use drugs"</li>
+          <li><span class="no">✕</span> "addicts"</li>
+          <li><span class="yes">✓</span> warm, hopeful, direct</li>
+          <li><span class="no">✕</span> fear, shame, clinical</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="note">Utah Naloxone brand refresh · sunrise system · authored in OKLCH</footer>
+</div>
+</body>
+</html>
